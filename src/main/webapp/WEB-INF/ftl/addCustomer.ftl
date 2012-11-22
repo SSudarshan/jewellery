@@ -19,6 +19,7 @@
     <li><a href="#pane4" data-toggle="tab">Invoices</a></li>
      <li><a href="#pane5" data-toggle="tab">Credits</a></li>
   </ul>
+  <#-- First tab started..... -->
    <div id="pane1" class="tab-pane">
 	
 			<div class="span6">

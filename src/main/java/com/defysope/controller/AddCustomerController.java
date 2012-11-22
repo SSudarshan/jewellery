@@ -12,7 +12,7 @@ public class AddCustomerController {
 	
 	@RequestMapping(value = "/addCustomer", method = RequestMethod.GET)
 	public ModelAndView index(@ModelAttribute("model") ModelMap model) {
-
+        System.out.println("Controller for Customer");
 		return new ModelAndView("addCustomer", model);
 	}
 

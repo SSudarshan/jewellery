@@ -29,7 +29,7 @@
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">Sales <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                           <li class="nav-header">Customers</li>
-                          <li><a href="${rc.getContextPath()}/addCustomer.html">Add Customer</a></li>
+                          <li><a href="${rc.getContextPath()}/addCustomer.html">New Customer</a></li>
                           <li><a href="#">View Coustomers</a></li>
                           <li class="divider"></li>
                           <li class="nav-header">Invoice</li>
