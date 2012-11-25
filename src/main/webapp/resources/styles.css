@@ -1,5 +1,6 @@
 body {
   adding-bottom: 40px;
+  background-image: url("../images/bg-body-ui.jpg") no-repeat scroll center -20px #BB6F04;
 }
 .content {
 	margin-top: 40px;

@@ -260,8 +260,55 @@
 			</div>
 			</div>
 		</div>
-		<div class="tab-pane" id="tab4">...</div>
-		<div class="tab-pane" id="tab5">...</div>
+		<div class="tab-pane" id="tab4">
+			<div class="row-fluid">
+				<div class="span6">
+				<table class="table">
+					
+					<tr>
+						<td class="td-25"><label>Ware House</lable></td>
+						<td>
+							<select name="searchWareHouse" class="input-medium">
+								<option value="0">Select</option> 
+							</select>
+						</td>
+						<td class="td-25"><label>Order Status</lable></td>
+						<td>
+							<select name="searchOredrStatus" class="input-medium">
+								
+								<option value="0">Open</option> 
+								<option value="1">Parked</option> 
+								<option value="2">Quote</option> 
+								<option value="3">Completed</option> 
+								<option value="4">All</option> 
+							</select>
+						</td>
+					</tr>
+					
+					
+				</table>
+			</div>
+			</div>
+		</div>
+		
+		<div class="tab-pane" id="tab5">
+			<div class="row-fluid">
+				<div class="span6">
+				<table class="table">
+					<tr>
+						<td class="td-25"><label>Credit Status</lable></td>
+						<td>
+							<select name="searchCreditStatus" class="input-medium">
+								<option value="0">Parked</option>
+								<option value="0">Completed</option>
+								<option value="0">All</option> 
+							</select>
+						</td>
+					</tr>
+				</table>
+			</div>
+			</div>
+		</div>
 	</div>
 </div>
 <@macro.showFooter/>

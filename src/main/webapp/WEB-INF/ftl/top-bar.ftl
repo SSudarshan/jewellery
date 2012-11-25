@@ -72,7 +72,7 @@
                         <ul class="dropdown-menu">
                           <li class="nav-header">Security</li>
                           <li><a href="#">Add Users</a></li>
-                          <li><a href="#">Add Roles</a></li>
+                          <li><a href="${rc.getContextPath()}/addRole.html">Add Roles</a></li>
                           <li><a href="#">Set Page Access</a></li>
                           <li class="divider"></li>
                           <li class="nav-header">Settings</li>
