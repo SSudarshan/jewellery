@@ -33,7 +33,7 @@
                           <li><a href="#">View Coustomers</a></li>
                           <li class="divider"></li>
                           <li class="nav-header">Invoice</li>
-                          <li><a href="#">Add Invoice</a></li>
+                          <li><a href="${rc.getContextPath()}/addInvoice.html">Add Invoice</a></li>
                           <li><a href="#">View Invoice</a></li>
                           <li class="divider"></li>
                           <li class="nav-header">Report</li>
@@ -52,6 +52,21 @@
                           </ul>
                       </li>
                       
+                       <li class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">Production <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                          <li class="nav-header">Assembly</li>
+                          <li><a href="${rc.getContextPath()}/addAssembly.html">New Order</a></li>
+                          <li><a href="${rc.getContextPath()}/addAssembly.html">Repair Order</a></li>
+                         
+                          <li class="divider"></li>
+                          <li class="nav-header">Enquiry</li>
+                          <li><a href="${rc.getContextPath()}/addInvoice.html">Product Enquiry</a></li>
+                          
+                          
+                         </ul>
+                      </li>
+                      
                       <li class="dropdown">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">Settings <b class="caret"></b></a>
                         <ul class="dropdown-menu">
@@ -63,7 +78,7 @@
                           <li class="nav-header">Settings</li>
                           <li><a href="#">Company</a></li>
                           <li><a href="#">Billings</a></li>
-                          <li><a href="#">Coustomer Type</a></li>
+                          <li><a href="${rc.getContextPath()}/customerType.html">Customer Type</a></li>
                           <li><a href="#">Delivery Setting</a></li>
                           <li><a href="#">Discount Setting</a></li>
                           </ul>
