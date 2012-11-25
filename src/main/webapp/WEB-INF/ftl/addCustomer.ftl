@@ -5,24 +5,20 @@
 <div class="inner-col" id ="mainDiv">
 	<div>
         <h3>Add Customer</h3>
-        <button class="btn">View All Customers</button>
-        <button class="btn">Add Invoice</button>
     </div>
-   
-   <div class="row-fluid">
-		<form class="form-horizontal">
-    <div class="tabbable">
-     <ul class="nav nav-tabs">
-      <li ><a href="#pane2" data-toggle="tab">Details</a></li>
-       <li><a href="#pane2" data-toggle="tab">Address</a></li>
-    <li><a href="#pane3" data-toggle="tab">Contact</a></li>
-    <li><a href="#pane4" data-toggle="tab">Invoices</a></li>
-     <li><a href="#pane5" data-toggle="tab">Credits</a></li>
-  </ul>
-  <#-- First tab started..... -->
-   <div id="pane1" class="tab-pane">
-	
-			<div class="span6">
+    
+    <ul class="nav nav-tabs">
+	    <li><a href="#tab1" data-toggle="tab">Details</a></li>
+	    <li><a href="#tab2" data-toggle="tab">Address</a></li>
+	    <li><a href="#tab3" data-toggle="tab">Contact</a></li>
+	    <li><a href="#tab4" data-toggle="tab">Invoices</a></li>
+	    <li><a href="#tab5" data-toggle="tab">Credits</a></li>
+    </ul>
+    
+    <div class="tab-content">
+		<div class="tab-pane active" id="tab1">
+			<div class="row-fluid">
+				<div class="span6">
 				<table class="table">
 					<tr>
 						<td class="td-25"><label>Customer Code</lable></td>
@@ -118,15 +114,13 @@
 					</tr>
 				</table>
 			</div>
+			</div>
+		</div>
 		
-	</div>
-	<#-- Second tab started..... -->
-	
-	<div id="pane2" class="tab-pane">
-	<div>
-        <h4>Postal Address</h4>
-    </div>
-			<div class="span6">
+		
+		<div class="tab-pane" id="tab2">
+			<div class="row-fluid">
+				<div class="span6">
 				<table class="table">
 					<tr>
 						<td class="td-25"><label>Address Name</lable></td>
@@ -195,13 +189,14 @@
 					</tr>
 				</table>
 			</div>
+			</div>
+		</div>
 		
-	</div>
-	<#-- third tab started..... -->
-	
-	<div id="pane3" class="tab-pane">
-	
-			<div class="span6">
+		
+		
+		<div class="tab-pane" id="tab3">
+			<div class="row-fluid">
+				<div class="span6">
 				<table class="table">
 					<tr>
 						<td class="td-25"><label>First Name</lable></td>
@@ -263,82 +258,10 @@
 					
 				</table>
 			</div>
-		
-	</div>
-	<#-- fourth Tab Started..... -->
-	
-	 <div id="pane4" class="tab-pane">
-	
-			<div class="span6">
-				<table class="table">
-					
-					<tr>
-						<td class="td-25"><label>Ware House</lable></td>
-						<td>
-							<select name="searchWareHouse" class="input-medium">
-								<option value="0">Select</option> 
-							</select>
-						</td>
-						<td class="td-25"><label>Order Status</lable></td>
-						<td>
-							<select name="searchOredrStatus" class="input-medium">
-								
-								<option value="0">Open</option> 
-								<option value="1">Parked</option> 
-								<option value="2">Quote</option> 
-								<option value="3">Completed</option> 
-								<option value="4">All</option> 
-							</select>
-						</td>
-					</tr>
-					
-					
-				</table>
 			</div>
-			
-			
-		
+		</div>
+		<div class="tab-pane" id="tab4">...</div>
+		<div class="tab-pane" id="tab5">...</div>
 	</div>
-	<#-- fifth Tab Started..... -->
-	 <div id="pane5" class="tab-pane">
-	
-			<div class="span6">
-				<table class="table">
-					<tr>
-						<td class="td-25"><label>Credit Status</lable></td>
-						<td>
-							<select name="searchCreditStatus" class="input-medium">
-								<option value="0">Parked</option>
-								<option value="0">Completed</option>
-								<option value="0">All</option> 
-							</select>
-						</td>
-					</tr>
-				</table>
-			</div>
-			
-			
-		
-	</div>
-	<#-- Add other tab panes here........ -->
-	
-	</form>	
-	</div>
-	</div>
-	<div class="row-fluid">
-		<form class="form-inline">
-			<div class="span3">
-				<span class="btn btn-link">Product Group</span>
-				<select name="productGrp">
-					<option value="0">Select Group</option>
-				</select>
-			</div>
-<@macro.showFooter>
-	<script type="text/javascript" src="${rc.getContextPath()}/resources/js/pages/addCustomer.js"></script>
-	<script>
-		$(function(){
-			new defysope.addcustomer.Main("#mainDiv", {
-			});
-		});
-	</script>
-</@macro.showFooter>
+</div>
+<@macro.showFooter/>
