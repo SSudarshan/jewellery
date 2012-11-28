@@ -15,41 +15,42 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.defysope.modal.CustomerType;
-import com.defysope.modal.ProductGroup;
-import com.defysope.service.CustomerTypeSettingsManager;
+import com.defysope.modal.Company;
+import com.defysope.modal.Role;
+import com.defysope.service.CompanySettingsManager;
 
 @Controller
-public class CustomerTypeController {
+public class CompanyController {
 	
 	@Autowired
-	private CustomerTypeSettingsManager customerTypeManager;
+	private CompanySettingsManager companySettingsManager;
 	
-	@RequestMapping(value = "/addCustomerType", method = RequestMethod.GET)
+	
+	@RequestMapping(value = "/addCompany", method = RequestMethod.GET)
 	public ModelAndView index(HttpServletRequest request,
 			HttpServletResponse response) {
 		Map<String, Object> model = new HashMap<String, Object>();
-		model.put("typeList", customerTypeManager.getCType());
-		return new ModelAndView("addCustomerType", model);
+		model.put("compList", companySettingsManager.getCompany());
+		return new ModelAndView("addCompany", model);
 	}
 
-	@RequestMapping(value = "/saveCType", method = RequestMethod.POST)
+	@RequestMapping(value = "/saveCompany", method = RequestMethod.POST)
 	public @ResponseBody
-	Object addUser(HttpServletRequest request, @ModelAttribute("group") CustomerType type) {
-		CustomerType savedType = customerTypeManager.saveCtype(type);
+	Object addCompany(HttpServletRequest request, @ModelAttribute("comp") Company comp) {
+		Company savedCompany = companySettingsManager.saveCompany(comp);
 		Map<String, Object> model = new HashMap<String, Object>();
-		model.put("savedType", savedType);
+		model.put("savedCompany", savedCompany);
 		return model;
 
 	}
 
-	@RequestMapping(value = "/deleteCType", method = RequestMethod.POST)
+	@RequestMapping(value = "/deleteCompany", method = RequestMethod.POST)
 	public @ResponseBody
-	Object deleteRole(HttpServletRequest request) {
+	Object deleteCompany(HttpServletRequest request) {
 		Map<String, Object> model = new HashMap<String, Object>();
 		int id = Integer.parseInt(request.getParameter("id"));
 		try {
-			customerTypeManager.removeCType(id);
+			companySettingsManager.removeCompany(id);
 			model.put("success", true);
 		} catch (Exception e) {
 			model.put("success", false);
@@ -58,6 +59,5 @@ public class CustomerTypeController {
 		return model;
 
 	}
-	
 
 }

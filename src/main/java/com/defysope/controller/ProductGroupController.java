@@ -15,41 +15,41 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.defysope.modal.CustomerType;
 import com.defysope.modal.ProductGroup;
-import com.defysope.service.CustomerTypeSettingsManager;
+import com.defysope.modal.Role;
+import com.defysope.service.ProductGroupSettingsManager;
 
 @Controller
-public class CustomerTypeController {
+public class ProductGroupController {
 	
 	@Autowired
-	private CustomerTypeSettingsManager customerTypeManager;
+	private ProductGroupSettingsManager prouctGroupSettingsManager;
 	
-	@RequestMapping(value = "/addCustomerType", method = RequestMethod.GET)
+	@RequestMapping(value = "/addProductGroup", method = RequestMethod.GET)
 	public ModelAndView index(HttpServletRequest request,
 			HttpServletResponse response) {
 		Map<String, Object> model = new HashMap<String, Object>();
-		model.put("typeList", customerTypeManager.getCType());
-		return new ModelAndView("addCustomerType", model);
+		model.put("groupList", prouctGroupSettingsManager.getPGroup());
+		return new ModelAndView("addProductGroup", model);
 	}
 
-	@RequestMapping(value = "/saveCType", method = RequestMethod.POST)
+	@RequestMapping(value = "/savePG", method = RequestMethod.POST)
 	public @ResponseBody
-	Object addUser(HttpServletRequest request, @ModelAttribute("group") CustomerType type) {
-		CustomerType savedType = customerTypeManager.saveCtype(type);
+	Object addUser(HttpServletRequest request, @ModelAttribute("group") ProductGroup group) {
+		ProductGroup savedPG = prouctGroupSettingsManager.savePGroup(group);
 		Map<String, Object> model = new HashMap<String, Object>();
-		model.put("savedType", savedType);
+		model.put("savedPG", savedPG);
 		return model;
 
 	}
 
-	@RequestMapping(value = "/deleteCType", method = RequestMethod.POST)
+	@RequestMapping(value = "/deletePG", method = RequestMethod.POST)
 	public @ResponseBody
 	Object deleteRole(HttpServletRequest request) {
 		Map<String, Object> model = new HashMap<String, Object>();
 		int id = Integer.parseInt(request.getParameter("id"));
 		try {
-			customerTypeManager.removeCType(id);
+			prouctGroupSettingsManager.removePGroup(id);
 			model.put("success", true);
 		} catch (Exception e) {
 			model.put("success", false);
@@ -58,6 +58,4 @@ public class CustomerTypeController {
 		return model;
 
 	}
-	
-
 }

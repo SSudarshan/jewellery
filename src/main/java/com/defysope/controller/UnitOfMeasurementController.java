@@ -15,41 +15,44 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.defysope.modal.CustomerType;
-import com.defysope.modal.ProductGroup;
-import com.defysope.service.CustomerTypeSettingsManager;
+import com.defysope.modal.Role;
+import com.defysope.modal.UnitOfMeasurement;
+import com.defysope.service.UnitOfMeasurementSettingsManager;
 
 @Controller
-public class CustomerTypeController {
+public class UnitOfMeasurementController {
 	
 	@Autowired
-	private CustomerTypeSettingsManager customerTypeManager;
+	private UnitOfMeasurementSettingsManager uomSettingsManager;
 	
-	@RequestMapping(value = "/addCustomerType", method = RequestMethod.GET)
+	@RequestMapping(value = "/addUOM", method = RequestMethod.GET)
 	public ModelAndView index(HttpServletRequest request,
 			HttpServletResponse response) {
+		System.out.println("addUOM Called");
 		Map<String, Object> model = new HashMap<String, Object>();
-		model.put("typeList", customerTypeManager.getCType());
-		return new ModelAndView("addCustomerType", model);
+		model.put("uomList", uomSettingsManager.getUOM());
+		return new ModelAndView("addUOM", model);
 	}
-
-	@RequestMapping(value = "/saveCType", method = RequestMethod.POST)
+	
+	@RequestMapping(value = "/saveUOM", method = RequestMethod.POST)
 	public @ResponseBody
-	Object addUser(HttpServletRequest request, @ModelAttribute("group") CustomerType type) {
-		CustomerType savedType = customerTypeManager.saveCtype(type);
+	Object addUOM(HttpServletRequest request, @ModelAttribute("uom") UnitOfMeasurement uom) {
+		System.out.println("SaveUOM Called");
+		UnitOfMeasurement savedUOMs = uomSettingsManager.saveUOM(uom);
 		Map<String, Object> model = new HashMap<String, Object>();
-		model.put("savedType", savedType);
+		model.put("savedUOMs", savedUOMs);
 		return model;
 
 	}
 
-	@RequestMapping(value = "/deleteCType", method = RequestMethod.POST)
+	@RequestMapping(value = "/deleteUOM", method = RequestMethod.POST)
 	public @ResponseBody
-	Object deleteRole(HttpServletRequest request) {
+	Object deleteUOM(HttpServletRequest request) {
+		System.out.println("deleteUOM Called");
 		Map<String, Object> model = new HashMap<String, Object>();
 		int id = Integer.parseInt(request.getParameter("id"));
 		try {
-			customerTypeManager.removeCType(id);
+			uomSettingsManager.removeUOM(id);
 			model.put("success", true);
 		} catch (Exception e) {
 			model.put("success", false);
@@ -58,6 +61,5 @@ public class CustomerTypeController {
 		return model;
 
 	}
-	
 
 }
