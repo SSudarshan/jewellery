@@ -12,6 +12,7 @@
 <script type="text/javascript" src="${rc.getContextPath()}/resources/js/jquery.validate.min.js"></script>
 <script type="text/javascript" src="${rc.getContextPath()}/resources/js/jquery.validate.additional-methods.min.js"></script>
 <script type="text/javascript" src="${rc.getContextPath()}/resources/js/jsrender.js"></script>
+<script type="text/javascript" src="${rc.getContextPath()}/resources/js/bootbox.js"></script>
 <script type="text/javascript" src="${rc.getContextPath()}/resources/select2/select2.js"></script>
 <script type="text/javascript" src="${rc.getContextPath()}/resources/bootstrap/bootstrap.min.js"></script>
 <script type="text/javascript" src="${rc.getContextPath()}/resources/utils.js"></script>

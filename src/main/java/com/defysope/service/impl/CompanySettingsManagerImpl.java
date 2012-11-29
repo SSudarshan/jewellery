@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.defysope.dao.CompanySettingsDao;
-import com.defysope.modal.Company;
+import com.defysope.model.Company;
 import com.defysope.service.CompanySettingsManager;
 
 @Service

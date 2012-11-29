@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.defysope.modal.CustomerType;
-import com.defysope.modal.ProductGroup;
+import com.defysope.model.CustomerType;
+import com.defysope.model.ProductGroup;
 import com.defysope.service.CustomerTypeSettingsManager;
 
 @Controller

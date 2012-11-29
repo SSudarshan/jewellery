@@ -132,3 +132,10 @@ h1, h2, h3 {
 td.center, th.center {
     text-align: center !important;
 }
+
+.table-ds th {
+    background-color: slategrey;
+    border-bottom: 1px solid slategrey;
+    color: #E2B901;
+    text-align: center;
+}

@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.defysope.modal.Company;
-import com.defysope.modal.Role;
+import com.defysope.model.Company;
+import com.defysope.model.Role;
 import com.defysope.service.CompanySettingsManager;
 
 @Controller

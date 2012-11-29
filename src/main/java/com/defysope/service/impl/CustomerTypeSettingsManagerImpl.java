@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.defysope.dao.CustomerTypeSettingsDao;
-import com.defysope.modal.CustomerType;
+import com.defysope.model.CustomerType;
 import com.defysope.service.CustomerTypeSettingsManager;
 
 

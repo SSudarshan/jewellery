@@ -3,7 +3,7 @@ package com.defysope.dao;
 import java.util.List;
 import java.util.Map;
 
-import com.defysope.modal.CustomerType;
+import com.defysope.model.CustomerType;
 
 public interface CustomerTypeSettingsDao {
 	

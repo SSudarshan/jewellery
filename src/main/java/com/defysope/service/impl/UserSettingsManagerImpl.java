@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.defysope.dao.UserSettingsDao;
-import com.defysope.modal.Role;
+import com.defysope.model.Role;
 import com.defysope.service.UserSettingsManager;
 
 @Service

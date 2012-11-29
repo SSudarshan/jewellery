@@ -20,12 +20,14 @@
     
     <div class="row-fluid">
     	<div class="span12">
-    		<table class="table table-bordered roleList" name="roleList">
+    		<table class="table table-striped table-bordered table-ds roleList" name="roleList" style="width:50%;">
+    		 <thead>
     			<tr>
-    				<td class="center">Role Name</td>
-    				<td class="center td-5">Edit</td>
-    				<td class="center td-5">Delete</td>
+    				<th class="center">Role Name</th>
+    				<th class="center td-5">Edit</th>
+    				<th class="center td-5">Delete</th>
     			</tr>
+    		</thead>	
     			<#if roleList?exists>
     			<#list roleList as role>
     			<tr class="row_${role.id}">

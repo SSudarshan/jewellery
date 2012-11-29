@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.defysope.dao.UnitOfMeasurementDao;
-import com.defysope.modal.UnitOfMeasurement;
+import com.defysope.model.UnitOfMeasurement;
 
 @Repository
 public class UnitOfMeasurementDaoImpl implements UnitOfMeasurementDao{

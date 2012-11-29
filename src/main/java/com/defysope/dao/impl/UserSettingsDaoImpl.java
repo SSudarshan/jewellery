@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.defysope.dao.UserSettingsDao;
-import com.defysope.modal.Role;
+import com.defysope.model.Role;
 
 @Repository
 public class UserSettingsDaoImpl implements UserSettingsDao {

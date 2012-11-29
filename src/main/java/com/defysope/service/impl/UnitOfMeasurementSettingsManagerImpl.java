@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.defysope.dao.UnitOfMeasurementDao;
-import com.defysope.modal.UnitOfMeasurement;
+import com.defysope.model.UnitOfMeasurement;
 import com.defysope.service.UnitOfMeasurementSettingsManager;
 
 @Service

@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.defysope.dao.CompanySettingsDao;
-import com.defysope.modal.Company;
+import com.defysope.model.Company;
 
 @Repository
 public class CompanySettingsDaoImpl implements CompanySettingsDao{

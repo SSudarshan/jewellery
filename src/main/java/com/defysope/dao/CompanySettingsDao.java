@@ -3,7 +3,7 @@ package com.defysope.dao;
 import java.util.List;
 import java.util.Map;
 
-import com.defysope.modal.Company;
+import com.defysope.model.Company;
 
 public interface CompanySettingsDao {
 	

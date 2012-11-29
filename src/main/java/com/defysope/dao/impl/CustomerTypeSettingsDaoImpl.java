@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.defysope.dao.CustomerTypeSettingsDao;
-import com.defysope.modal.CustomerType;
+import com.defysope.model.CustomerType;
 
 @Repository
 public class CustomerTypeSettingsDaoImpl implements CustomerTypeSettingsDao{

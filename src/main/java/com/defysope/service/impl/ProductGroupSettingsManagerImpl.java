@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.defysope.dao.ProductGroupSettingsDao;
-import com.defysope.modal.ProductGroup;
+import com.defysope.model.ProductGroup;
 import com.defysope.service.ProductGroupSettingsManager;
 
 @Transactional

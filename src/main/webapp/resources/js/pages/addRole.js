@@ -30,50 +30,77 @@ $(function() {
 															this.el).data('id')
 												},
 												type : 'POST',
-												msgprocessing : {
-													hideMessage : true
-												}
+
 											})
 									.done(
 											function(data) {
-												var html = '<tr class="row_'
+												$(':input[name="roleName"]',
+														this.el).data('id', 0);
+												var tblCls = $('tr.row_'
 														+ data.savedRole.id
-														+ '"><td>'
-														+ data.savedRole.description
-														+ '</td><td><span class="btn btn-success editRole" data-id="'
-														+ data.savedRole.id
-														+ '"><i class="icon-pencil"></i></span></td><td><span class="btn btn-danger deleteRole" data-id="'
-														+ data.savedRole.id
-														+ '"><i class="icon-remove"></i></span></td><tr>';
-												jQuery('table.roleList')
-														.append(html);
+														+ ' td:eq(0)');
+												if (tblCls.length > 0) {
+													$(tblCls)
+															.text(
+																	data.savedRole.description);
+
+												} else {
+													var html = '<tr class="row_'
+															+ data.savedRole.id
+															+ '"><td>'
+															+ data.savedRole.description
+															+ '</td><td><span class="btn btn-success editRole" data-id="'
+															+ data.savedRole.id
+															+ '"><i class="icon-pencil"></i></span></td><td><span class="btn btn-danger deleteRole" data-id="'
+															+ data.savedRole.id
+															+ '"><i class="icon-remove"></i></span></td><tr>';
+													jQuery('table.roleList')
+															.append(html);
+												}
+												$('span.saveRoleBtn', this.el).text('Add Role');
 												$(':input[name="roleName"]')
 														.val('');
 											});
 
 						},
 						deleteRole : function(e) {
-							var el = $(e.currentTarget);
-							var id = $(el).data('id');
-							$.ajax({
-								url : 'deleteRole.html',
-								data : {
+							bootbox
+									.confirm(
+											"Are you sure want to delete the selected role ?",
+											function(confirmed) {
+												if (confirmed) {
+													var el = $(e.currentTarget);
+													var id = $(el).data('id');
+													$
+															.ajax(
+																	{
+																		url : 'deleteRole.html',
+																		data : {
 
-									id : id
-								},
-								type : 'POST',
-								msgprocessing : {
-									hideMessage : true
-								}
-							}).done(function(data) {
-								if (data.success) {
-									var el = $('table.roleList');
-									$('tr.row_' + id, el).remove();
-								} else {
-									alert("Error while deleting the Role");
-								}
+																			id : id
+																		},
+																		type : 'POST',
+																		msgprocessing : {
+																			hideMessage : true
+																		}
+																	})
+															.done(
+																	function(
+																			data) {
+																		if (data.success) {
+																			var el = $('table.roleList');
+																			$(
+																					'tr.row_'
+																							+ id,
+																					el)
+																					.remove();
+																		} else {
+																			alert("Error while deleting the Role");
+																		}
 
-							});
+																	});
+												}
+											});
 
 						},
 						editRole : function(e) {
@@ -82,7 +109,6 @@ $(function() {
 							$(':input[name="roleName"]').data('id', id);
 							var tempEl = $("tr.row_" + id + " td:eq(0)").text();
 							$(':input[name="roleName"]').val(tempEl);
-
 							$('span.saveRoleBtn', this.el).text('Update Role');
 
 						}
