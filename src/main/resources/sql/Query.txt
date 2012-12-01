@@ -8,3 +8,9 @@ create table tblProductGroup(gid serial  PRIMARY KEY, groupName varchar(40));
 
 
 create table tblCustomerType(ctypeid serial  PRIMARY KEY, customerType varchar(40));
+
+create table tblBoardRate(bRateId serial  PRIMARY KEY, categoryName varchar(40), quantity varchar(40), boardRate varchar(40));
+
+create table tblDeliveryMethod(dmid serial  PRIMARY KEY, deliveryMehtod varchar(40));
+
+create table tblWarehouse(wid serial  PRIMARY KEY, warehouse varchar(40));

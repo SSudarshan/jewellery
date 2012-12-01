@@ -26,10 +26,10 @@
     				<td class="center td-5">Edit</td>
     				<td class="center td-5">Delete</td>
     			</tr>
-    			<#if roleList?exists>
+    			<#if deliveryList?exists>
     			<#list deliveryList as delivery>
     			<tr class="row_${delivery.id}">
-    				<td>${delivery.description}</td>
+    				<td>${delivery.deliveryMehtod}</td>
     				<td class="center td-5"><span class="btn btn-success editDelivery" data-id="${delivery.id}"><i class="icon-pencil"></i></span></td>
     				<td class="center td-5"><span class="btn btn-danger deleteDelivery" data-id="${delivery.id}"><i class="icon-remove"></i></span></td>
     			</tr>
@@ -41,5 +41,11 @@
     
 </div>
 <@macro.showFooter>
-	
+	<script type="text/javascript" src="${rc.getContextPath()}/resources/js/pages/addDeliveryMethod.js"></script>
+	<script>
+		$(function(){
+			new defysope.addDeliveryMethod.Main("#mainDiv", {
+			});
+		});
+	</script>
 </@macro.showFooter>

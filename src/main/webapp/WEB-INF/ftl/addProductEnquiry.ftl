@@ -9,6 +9,102 @@
     <div class="row-fluid">
 		<div class="span4">
 			<table class="table">
+				
+				<tr>
+					<td class="td-10">Attender</td>
+					<td class="td-15"><input type="text" class="input-large" name="attender" id="attender" data-id="0"/></td>
+						</select></td>
+					
+				</tr>
+				<tr>
+					<td class="td-10">Customer Type</td>
+					<td class="td-15"><select name="customerType" class="input-medium" id="customerType" data-id="0">
+								<option value="0">Select Group</option> 
+						</select></td>
+					
+				</tr>
+				<tr>
+					<td class="td-10">Customer</td>
+					<td class="td-15"><select name="customerName" class="input-medium" id="customerName" data-id="0">
+								<option value="0">Select Group</option> 
+						</select></td>
+					
+				</tr>
+				<tr>
+					<td class="td-10">Referal</td>
+					<td class="td-15"><input type="text" class="input-large" name="address" id="address" data-id="0"/></td>
+						</select></td>
+					
+				</tr>
+				<tr>
+					<td class="td-10">Phone</td>
+					<td class="td-15"><input type="text" class="input-large" name="street" id="street" data-id="0"/></td>
+					
+				</tr>
+				<tr>
+					<td class="td-10">Email</td>
+					<td class="td-15"><input type="text" class="input-large" name="state" id="state" data-id="0"/></td>
+					
+				</tr>
+				
+				<tr>
+					<td class="td-10">Moblie</td>
+					<td class="td-15"><input type="text" class="input-large" name="pinCode" id="pinCode" data-id="0"/></td>
+					
+				</tr>
+				
+				
+			</table>
+		</div>
+		<div class="span4">
+			<table class="table">
+				<tr>
+					<td class="td-10">Enq Date</td>
+					<td class="td-15"><input type="text" class="input-large" name="enquiryDate" id="enquiryDate" data-id="0"/></td>
+					
+				</tr>
+				<tr>
+					<td class="td-10">Enq Type</td>
+					<td class="td-15"><select name="enquiryType" class="input-medium" id="enquiryType" data-id="0">
+								<option value="0">Select Type</option> 
+								<option value="1">Ready Made</option> 
+								<option value="2">Assemble Product</option> 
+								<option value="3">Repair Product</option> 
+						</select></td>
+					
+				</tr>
+				<tr>
+					<td class="td-10">Appt. Date</td>
+					<td class="td-15"><input type="text" class="input-large" name="apptDate" id="apptDate" data-id="0"/></td>
+					
+				</tr>
+				<tr>
+					<td class="td-10">Appt. Time</td>
+					<td class="td-15"><input type="text" class="input-large" name="apptTime" id="apptTime" data-id="0"/></td>
+					
+				</tr>
+				
+				<tr>
+					<td class="td-10">Status</td>
+					<td class="td-15"><select name="enqStatus" class="input-medium" id="enqStatus" data-id="0">
+								<option value="0">Open</option> 
+								<option value="1">Close</option> 
+								 
+								
+							</select></td>
+					
+				</tr>
+				<tr>
+					<td class="td-10">Enq Details</td>
+					<td class="td-15"><input type="text" class="input-large" name="enqDetails" id="enqDetails" data-id="0"/></td>
+				
+				</tr>
+				
+				
+			</table>
+		</div>
+		<div class="span4">
+			<table class="table">
 				<tr>
 					<td class="td-10">Product Group</td>
 					<td class="td-15"><select name="productGroup" class="input-medium" id="productGroup" data-id="0">
@@ -18,150 +114,69 @@
 				</tr>
 				<tr>
 					<td class="td-10">Product Code</td>
-					<td class="td-15"><select name="productCode" class="input-medium" id="productCode" data-id="0">
-								<option value="0">Select Code</option> 
-						</select></td>
+					<td class="td-15"><input type="text" class="input-large" name="productCode" id="productCode" data-id="0"/></td>
 					
 				</tr>
 				<tr>
-					<td class="td-10">Enquiry Date</td>
-					<td class="td-15"><input type="text" class="input-large" name="tradingName" id="tradingName" data-id="0"/></td>
+					<td class="td-10">Product Description </td>
+					<td class="td-15"><input type="text" class="input-large" name="productDesc" id="productDesc" data-id="0"/></td>
 					
 				</tr>
 				<tr>
-					<td class="td-10">Trading Name</td>
-					<td class="td-15"><input type="text" class="input-large" name="tradingName" id="tradingName" data-id="0"/></td>
+					<td class="td-10">Product Cost </td>
+					<td class="td-15"><input type="text" class="input-large" name="productCost" id="productCost" data-id="0"/></td>
 					
 				</tr>
 				<tr>
-					<td class="td-10">Customer Name</td>
-					<td class="td-15"><select name="organizationType" class="input-medium" id="organizationType" data-id="0">
-								<option value="0">Select Customer</option> 
-						</select></td>
-					
-				</tr>
-				<tr>
-					<td class="td-10">Trading Name</td>
-					<td class="td-15"><input type="text" class="input-large" name="tradingName" id="tradingName" data-id="0"/></td>
-					
-				</tr>
-				<tr>
-					<td class="td-10">Organization Type</td>
-					<td class="td-15"><select name="organizationType" class="input-medium" id="organizationType" data-id="0">
-								<option value="0">Company</option> 
-								<option value="0">Person</option> 
-								<option value="0">Partnership</option> 
-								<option value="0">Sole Trader</option> 
-								
-							</select></td>
-					
-				</tr>
-				<tr>
-					<td class="td-10">Regd. Number</td>
-					<td class="td-15"><input type="text" class="input-large" name="regNumber" id="regNumber" data-id="0"/></td>
-					
-				</tr>
-				<tr>
-					<td class="td-10">Website</td>
-					<td class="td-15"><input type="text" class="input-large" name="website" id="website" data-id="0"/></td>
+					<td class="td-10"><span class="btn btn-primary saveCompanyBtn" style="vertical-align:top;">Add</span></td>
+					<td class="td-15"><span class="btn btn-primary saveCompanyBtn" style="vertical-align:top;">Del</span></td>
 				
 				</tr>
 				<tr>
-					<td class="td-10">Fax</td>
-					<td class="td-15"><input type="text" class="input-large" name="fax" id="fax" data-id="0"/></td>
-				
-				</tr>
-				
-			</table>
-		</div>
-		<div class="span4">
-			<table class="table">
-				<tr>
-					<td class="td-10">Address</td>
-					<td class="td-15"><input type="text" class="input-large" name="address" id="address" data-id="0"/></td>
+					<td class="td-10">Product List</td>
+					<td class="td-15"><select name="productList" id="productList" size="4" multiple="multiple">
+                       <option value="1">item 1</option>
+
+                        <option value="2">item 2</option>
+
+                          <option value="3">item 3</option>
+
+                         <option value="4">item 4</option>
+                         <option value="5">item 5</option>
+
+                         
+
+                         <option value="0">All</option>
+
+</select></td>
 					
 				</tr>
 				<tr>
-					<td class="td-10">Street Name</td>
-					<td class="td-15"><input type="text" class="input-large" name="streetName" id="streetName" data-id="0"/></td>
+					<td class="td-10">Product Total </td>
+					<td class="td-15"><input type="text" class="input-large" name="productTotal" id="productTotal" data-id="0"/></td>
 					
-				</tr>
-				<tr>
-					<td class="td-10">City</td>
-					<td class="td-15"><input type="text" class="input-large" name="city" id="city" data-id="0"/></td>
-					
-				</tr>
-				<tr>
-					<td class="td-10">State</td>
-					<td class="td-15"><input type="text" class="input-large" name="state" id="state" data-id="0"/></td>
-				
-				</tr>
-				<tr>
-					<td class="td-10">Country</td>
-					<td class="td-15"><select name="country" class="input-medium" id="country" data-id="0">
-								<option value="0">India</option> 
-								<option value="0">America</option> 
-								<option value="0">Japan</option> 
-								<option value="0">Srilanka</option> 
-								
-							</select></td>
-					
-				</tr>
-				<tr>
-					<td class="td-10">Postal Code</td>
-					<td class="td-15"><input type="text" class="input-large" name="postalCode" id="postalCode" data-id="0"/></td>
-				
 				</tr>
 				
-				
-			</table>
-		</div>
-		<div class="span4">
-			<table class="table">
-				<tr>
-					<td class="td-10">Contact Person</td>
-					<td class="td-15"><input type="text" class="input-large" name="contactPerson" id="contactPerson" data-id="0"/></td>
-					
-				</tr>
-				<tr>
-					<td class="td-10">Telephone</td>
-					<td class="td-15"><input type="text" class="input-large" name="telephone" id="telephone" data-id="0"/></td>
-					
-				</tr>
-				<tr>
-					<td class="td-10">Mobile</td>
-					<td class="td-15"><input type="text" class="input-large" name="mobile" id="mobile" data-id="0"/></td>
-					
-				</tr>
-				<tr>
-					<td class="td-10">Purchase Email</td>
-					<td class="td-15"><input type="text" class="input-large" name="purchaseEmail" id="purchaseEmail" data-id="0"/></td>
-					
-				</tr>
-				<tr>
-					<td class="td-10">Sales Email</td>
-					<td class="td-15"><input type="text" class="input-large" name="salesEmail" id="salesEmail" data-id="0"/></td>
-				
-				</tr>
 				
 			</table>
 		</div>
 		
     </div>
     <div class="span12">
-		<span class="btn btn-primary saveCompanyBtn" style="vertical-align:top;"> Add Company</span>
+		<span class="btn btn-primary saveCompanyBtn" style="vertical-align:top;">Save Enquiry</span>
 		</div>
     <div class="row-fluid">
     	<div class="span12">
     		<table class="table table-bordered compList" name="compList">
     			<tr>
-    				<td class="center">Company Name</td>
-    				<td class="center">Regd Number</td>
-    				<td class="center">WebSite</td>
-    				<td class="center">Contact Person</td>
+    				<td class="center">Customer Name</td>
+    				<td class="center">Enquiry Date</td>
+    				<td class="center">Appt Date</td>
+    				<td class="center">Appt time</td>
     				<td class="center">Phone</td>
-    				<td class="center">Sales Email</td>
-    				<td class="center">Purchase Email</td>
+    				<td class="center">Email</td>
+    				<td class="center">Enquiry Type</td>
+    				<td class="center">Enquiry Status</td>
     				<td class="center td-5">Edit</td>
     				<td class="center td-5">Delete</td>
     			</tr>
@@ -186,11 +201,5 @@
     
 </div>
 <@macro.showFooter>
-	<script type="text/javascript" src="${rc.getContextPath()}/resources/js/pages/addCompany.js"></script>
-	<script>
-		$(function(){
-			new defysope.addCompany.Main("#mainDiv", {
-			});
-		});
-	</script>
+	
 </@macro.showFooter>

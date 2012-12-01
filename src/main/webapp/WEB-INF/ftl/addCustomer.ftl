@@ -11,8 +11,9 @@
 	    <li><a href="#tab1" data-toggle="tab">Details</a></li>
 	    <li><a href="#tab2" data-toggle="tab">Address</a></li>
 	    <li><a href="#tab3" data-toggle="tab">Contact</a></li>
-	    <li><a href="#tab4" data-toggle="tab">Invoices</a></li>
-	    <li><a href="#tab5" data-toggle="tab">Credits</a></li>
+	    <li><a href="#tab4" data-toggle="tab">Delivery</a></li>
+	    <li><a href="#tab5" data-toggle="tab">Invoices</a></li>
+	    <li><a href="#tab6" data-toggle="tab">Credits</a></li>
     </ul>
     
     <div class="tab-content">
@@ -119,8 +120,13 @@
 		
 		
 		<div class="tab-pane" id="tab2">
+			
 			<div class="row-fluid">
+			
 				<div class="span6">
+				<div>
+        <h4>Postal Address</h4>
+          </div>
 				<table class="table">
 					<tr>
 						<td class="td-25"><label>Address Name</lable></td>
@@ -154,10 +160,11 @@
 					
 				</table>
 			</div>
+			
+			<div class="span6">
 			<div>
         <h4>Physical Address</h4>
           </div>
-			<div class="span6">
 				<table class="table">
 					<tr>
 						<td class="td-25"><label>Address Name</lable></td>
@@ -264,6 +271,80 @@
 			<div class="row-fluid">
 				<div class="span6">
 				<table class="table">
+					<tr>
+						<td class="td-25"><label>First Name</lable></td>
+						<td><input type="text" class="input-medium" name="deliveryFirstName"></td>
+					</tr>
+					<tr>
+						<td class="td-25"><label>Middle Name</lable></td>
+						<td><input type="text" class="input-medium" name="deliveryMiddleName"></td>
+					</tr>
+					<tr>
+						<td class="td-25"><label>Last Name</lable></td>
+						<td><input type="text" class="input-medium" name="deliveryLastName"></td>
+					</tr>
+					<tr>
+						<td class="td-25"><label>Email Address</lable></td>
+						<td><input type="text" class="input-medium" name="deliveryEmailAddress"></td>
+					</tr>
+					<tr>
+						<td class="td-25"><label>Email CC Address</lable></td>
+						<td><input type="text" class="input-medium" name="deliveryCCAddress"></td>
+					</tr>
+					<tr>
+						<td class="td-25"><label>phone</lable></td>
+						<td><input type="text" class="input-medium" name="deliveryPhone"></td>
+					</tr>
+					
+					<tr>
+						<td class="td-25"><label>Notes</lable></td>
+						
+						<td><textarea class="xxlarge" name="deliveryNotes" id="textarea" rows="3" ></textarea></td>
+					</tr>
+					
+					
+				</table>
+			</div>
+			
+			<div class="span6">
+				<table class="table">
+					<tr>
+						<td class="td-25"><label>Delivery Address</lable></td>
+						<td><input type="text" class="input-medium" name="deliveryAddress"></td>
+					</tr>
+					<tr>
+						<td class="td-25"><label>Street</lable></td>
+						<td><input type="text" class="input-medium" name="deliveryStreet"></td>
+					</tr>
+					<tr>
+						<td class="td-25"><label>City</lable></td>
+						<td><input type="text" class="input-medium" name="deliveryCity"></td>
+					</tr>
+					<tr>
+						<td class="td-25"><label>State</lable></td>
+						<td><input type="text" class="input-medium" name="deliveryState"></td>
+					</tr>
+					<tr>
+						<td class="td-25"><label>Country</lable></td>
+						<td><input type="text" class="input-medium" name="deliveryCountry"></td>
+					</tr>
+					<tr>
+						<td class="td-25"><span class="btn btn-link">Delivery Method</span></td>
+						<td>
+							<select name="country" class="input-medium">
+								<option value="0">Select Method</option> 
+							</select>
+						</td>
+					</tr>
+					
+				</table>
+			</div>
+			</div>
+		</div>
+		<div class="tab-pane" id="tab5">
+			<div class="row-fluid">
+				<div class="span6">
+				<table class="table">
 					
 					<tr>
 						<td class="td-25"><label>Ware House</lable></td>
@@ -291,7 +372,7 @@
 			</div>
 		</div>
 		
-		<div class="tab-pane" id="tab5">
+		<div class="tab-pane" id="tab6">
 			<div class="row-fluid">
 				<div class="span6">
 				<table class="table">

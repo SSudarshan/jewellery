@@ -56,12 +56,12 @@
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">Production <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                           <li class="nav-header">Assembly</li>
-                          <li><a href="${rc.getContextPath()}/addAssembly.html">Assembly Order</a></li>
-                          <li><a href="${rc.getContextPath()}/addAssembly.html">Payment</a></li>
+                          <li><a href="${rc.getContextPath()}/addAssemblyOrder.html">Assembly Order</a></li>
+                          <li><a href="#">Payment</a></li>
                          
                           <li class="divider"></li>
                           <li class="nav-header">Enquiry</li>
-                          <li><a href="${rc.getContextPath()}/addInvoice.html">Product Enquiry</a></li>
+                          <li><a href="${rc.getContextPath()}/addProductEnquiry.html">Product Enquiry</a></li>
                           
                           
                          </ul>
@@ -81,12 +81,12 @@
                           <li><a href="${rc.getContextPath()}/addProductGroup.html">Product Group</a></li>
                           <li><a href="${rc.getContextPath()}/addTaxes.html">Taxes</a></li>
                            <li><a href="${rc.getContextPath()}/addFinancialYear.html">Financial Year</a></li>
-                            <li><a href="${rc.getContextPath()}/addWareHouse.html">WareHouse</a></li>
+                            <li><a href="${rc.getContextPath()}/addWarehouse.html">WareHouse</a></li>
                             <li><a href="${rc.getContextPath()}/addDeliveryMethod.html">Delivery Method</a></li>
                             <li><a href="${rc.getContextPath()}/addBoardRate.html">Board Rate</a></li>
                           <li><a href="#">Billings</a></li>
                           <li><a href="${rc.getContextPath()}/addCustomerType.html">Customer Type</a></li>
-                          <li><a href="${rc.getContextPath()}/addDeliveryMethod.html">Delivery Method</a></li>
+                         
                           <li><a href="#">Delivery Setting</a></li>
                           <li><a href="#">Discount Setting</a></li>
                           </ul>

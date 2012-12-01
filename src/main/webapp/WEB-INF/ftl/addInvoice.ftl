@@ -4,7 +4,7 @@
 <@macro.showHeader />
 <div class="inner-col" id ="mainDiv">
 	<div>
-        <h3>Add Purchase</h3>
+        <h3>Add Invoice</h3>
     </div>
 	<div class="row-fluid">
 		<form class="form-horizontal">
@@ -214,93 +214,7 @@
     </div>
 		</form>	
 	</div>
-	<div class="row-fluid">
-        <div class="span3">
-        <table class="table">
-        <tr>
-        <td></td>
-        <td></td>
-        </tr>
-        </table>
-        </div>
-        <div class="span4">
-				<table class="table">
-				<tbody>
-
-            <tr>
-                <td class="td-25"><label>Line Count</lable></td>
-                <td class="number"><input disabled="disabled" id="LineCount" name="SalesOrderLines.Count" type="text" value="0" /></td>
-            </tr>
-
-            <tr>
-                <td class="td-25"><label>Total Volume</lable></td>
-                <td class="number"><input disabled="disabled" id="Volume" name="volume" type="text" value="" /></td>
-            </tr>
-
-            <tr>
-                <td class="td-25"><label>Total Weight</lable></td>
-                <td class="number"><input disabled="disabled" id="Weight" name="weight" type="text" value="" /></td>
-            </tr>
-
-            <tr>
-                <td class="td-25"><label>Customer Name</lable></td>
-                <td  class="number"><input disabled="disabled" id="Customer_SellPriceTier_Description" name="Customer.SellPriceTier.Description" type="text" value="" /></td>
-            </tr>
-            
-            
-        <tr>
-        <td class="td-25"><label>Payment Terms</lable></td>
-    </tr>
-    <tr >
-        <td class="td-25"><label>Currency Code</lable></td>
-    </tr>
-
- </tbody></table>
-   </div>
-
-        <div class="span4">
-            <table class="table"><tbody>
-
-            <tr>
-                <td class="td-25"><label>Item Count</lablel></td>
-                <td class="number"><input disabled="disabled" id="ItemCount" name="itemCount" type="text" value="0" /></td>
-            </tr>
-
-            <tr>
-                <td class="td-25"><label>Sub Total</lablel></td>
-                <td class="number"><input id="OrderSubTotal" name="SubTotal" readOnly="True" type="text" value="0" /></td>
-            </tr>
-
-            
-
-            <tr >
-               <td class="td-25"><label>Tax Total</lablel></td>
-                
-                <td class="number"><input disabled="disabled" id="OrderTaxTotalBC" name="basePOTaxTotal" type="text" value="" /></td>
-            </tr>
-            
-            <tr >
-               <td class="td-25"><label>Total</lablel></td>
-               
-                <td class="number"><input disabled="disabled" id="OrderTotal" name="baseTotal" type="text" value="" /></td>
-            </tr>
-
-           <tr >
-                <td class="td-25"><label>Margin</lablel></td>
-                <td class="number"><input disabled="disabled" id="Margin" name="margin" type="text" value="" /></td>
-            </tr>
-            <tr id="profitRow">
-                <td class="td-25"><label>Profit</lablel></td>
-                <td class="number"><input disabled="disabled" id="Profit" name="profit" type="text" value="" /></td>
-            </tr>
-            <tr>
-            <td><button class="btn">Print</button></td>
-            <td><button class="btn">Email</button></td>
-            <td><button class="btn">Delete</button></td>
-            </tr>
-
-            </tbody></table>
-        </div>
+	
         
 </div>
 <@macro.showFooter>
