@@ -9,14 +9,15 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "tblcustomertype")
-public class CustomerType {
+@Table(name = "tblcountry")
+public class Country {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO, generator = "tblcustomertype_cid_gen")
-	@SequenceGenerator(name = "tblcustomertype_cid_gen", sequenceName = "tblcustomertype_cid_seq")
+	@GeneratedValue(strategy = GenerationType.AUTO, generator = "tblcountry_cid_gen")
+	@SequenceGenerator(name = "tblcountry_cid_gen", sequenceName = "tblcountry_cid_seq")
 	@Column(name = "cid")
-	int id;
+	private int id;
+
 	private String description;
 
 	public int getId() {
