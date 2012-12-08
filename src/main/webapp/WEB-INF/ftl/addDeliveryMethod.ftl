@@ -20,7 +20,7 @@
     
     <div class="row-fluid">
     	<div class="span12">
-    		<table class="table table-bordered deliveryList" name="deliveryList">
+    		<table class="table table-striped table-bordered table-ds deliveryList" name="deliveryList" style="width:50%;">
     			<tr>
     				<td class="center">Delivery Method</td>
     				<td class="center td-5">Edit</td>
@@ -30,8 +30,8 @@
     			<#list deliveryList as delivery>
     			<tr class="row_${delivery.id}">
     				<td>${delivery.deliveryMehtod}</td>
-    				<td class="center td-5"><span class="btn btn-success editDelivery" data-id="${delivery.id}"><i class="icon-pencil"></i></span></td>
-    				<td class="center td-5"><span class="btn btn-danger deleteDelivery" data-id="${delivery.id}"><i class="icon-remove"></i></span></td>
+    				<td class="center td-5"><span class="btn btn-success editDMethod" data-id="${delivery.id}"><i class="icon-pencil"></i></span></td>
+    				<td class="center td-5"><span class="btn btn-danger deleteDMethod" data-id="${delivery.id}"><i class="icon-remove"></i></span></td>
     			</tr>
     			</#list>
     			</#if>

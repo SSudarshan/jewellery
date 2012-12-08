@@ -12,7 +12,7 @@ public class BoardRate {
 	
 	@Id
 	@GeneratedValue
-	@Column(name="bRateId")
+	@Column(name="cid")
 	int id;
 	String categoryName;
 	String quantity;

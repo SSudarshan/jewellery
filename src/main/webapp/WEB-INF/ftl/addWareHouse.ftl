@@ -20,7 +20,7 @@
     
     <div class="row-fluid">
     	<div class="span12">
-    		<table class="table table-bordered houseList" name="houseList">
+    		<table class="table table-striped table-bordered table-ds  houseList" name="houseList">
     			<tr>
     				<td class="center">Ware House</td>
     				<td class="center td-5">Edit</td>

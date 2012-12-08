@@ -14,7 +14,7 @@ public class DeliveryMethod {
 	
 	@Id
 	@GeneratedValue
-	@Column(name="dmid")
+	@Column(name="cid")
 	int id;
 	
 	String deliveryMehtod;

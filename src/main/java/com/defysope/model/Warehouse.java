@@ -12,7 +12,7 @@ public class Warehouse {
 
 	@Id
 	@GeneratedValue
-	@Column(name="wid")
+	@Column(name="cid")
 	int id;
 	
 	String warehouse;

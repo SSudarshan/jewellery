@@ -17,7 +17,7 @@
                           <li><a href="#">View Purchase</a></li>
                           <li class="divider"></li>
                           <li class="nav-header">Suppliers</li>
-                          <li><a href="#">Add Suppliers</a></li>
+                          <li><a href="${rc.getContextPath()}/addSupplier.html">Add Suppliers</a></li>
                           <li><a href="#">View Suppliers</a></li>
                           <li class="divider"></li>
                           <li class="nav-header">Report</li>
@@ -30,10 +30,12 @@
                         <ul class="dropdown-menu">
                           <li class="nav-header">Customers</li>
                           <li><a href="${rc.getContextPath()}/addCustomer.html">New Customer</a></li>
-                          <li><a href="#">View Coustomers</a></li>
+                          <li><a href="#">View Customers</a></li>
+                           <li><a href="${rc.getContextPath()}/addSalesOrder.html">New Sales Order</a></li>
+                          <li><a href="#">View Sales Order</a></li>
                           <li class="divider"></li>
                           <li class="nav-header">Invoice</li>
-                          <li><a href="${rc.getContextPath()}/addInvoice.html">Add Invoice</a></li>
+                          <li><a href="${rc.getContextPath()}/addPayment.html">Add Payment</a></li>
                           <li><a href="#">View Invoice</a></li>
                           <li class="divider"></li>
                           <li class="nav-header">Report</li>

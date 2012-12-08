@@ -30,12 +30,21 @@ $(function() {
 															this.el).data('id')
 												},
 												type : 'POST',
-												msgprocessing : {
-													hideMessage : true
-												}
+												
 											})
 									.done(
 											function(data) {
+												$(':input[name="deliveryMethod"]',
+														this.el).data('id', 0);
+												var tblCls = $('tr.row_'
+														+ data.savedDelivery.id
+														+ ' td:eq(0)');
+												if (tblCls.length > 0) {
+													$(tblCls)
+															.text(
+																	data.savedDelivery.deliveryMehtod);
+
+												} else {
 												var html = '<tr class="row_'
 														+ data.savedDelivery.id
 														+ '"><td>'
@@ -47,9 +56,10 @@ $(function() {
 														+ '"><i class="icon-remove"></i></span></td><tr>';
 												jQuery('table.deliveryList')
 														.append(html);
-												$(':input[name="roleName"]')
+												$(':input[name="deliveryMethod"]')
 														.val('');
-											});
+											}
+										});
 
 						},
 						deleteDMethod : function(e) {

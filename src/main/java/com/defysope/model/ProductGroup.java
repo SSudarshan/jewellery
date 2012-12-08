@@ -12,7 +12,7 @@ public class ProductGroup {
 	
 	@Id
 	@GeneratedValue
-	@Column(name="gid")
+	@Column(name="cid")
 	int id;
 	String groupName;
 	public int getId() {
