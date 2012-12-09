@@ -12,12 +12,12 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "tblcoustomer")
+@Table(name = "tblcustomer")
 public class Customer {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO, generator = "tblcoustomer_cid_gen")
-	@SequenceGenerator(name = "tblcoustomer_cid_gen", sequenceName = "tblcoustomer_cid_seq")
+	@GeneratedValue(strategy = GenerationType.AUTO, generator = "tblcustomer_cid_gen")
+	@SequenceGenerator(name = "tblcustomer_cid_gen", sequenceName = "tblcustomer_cid_seq")
 	@Column(name = "cid")
 	private int id;
 
@@ -35,7 +35,9 @@ public class Customer {
 
 	private String firstName;
 	private String lastName;
-	private String email;
+	private String gender;
+	private int age;
+	private String designation;
 
 	public int getId() {
 		return id;
@@ -85,12 +87,28 @@ public class Customer {
 		this.lastName = lastName;
 	}
 
-	public String getEmail() {
-		return email;
+	public String getGender() {
+		return gender;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+	public String getDesignation() {
+		return designation;
+	}
+
+	public void setDesignation(String designation) {
+		this.designation = designation;
 	}
 
 }
