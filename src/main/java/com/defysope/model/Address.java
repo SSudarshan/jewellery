@@ -31,6 +31,7 @@ public class Address {
 	private Integer mobile;
 	private Integer fax;
 	private Integer extno;
+	private String name;
 	@ManyToOne(targetEntity = State.class, fetch = FetchType.EAGER)
 	@JoinColumn(name = "state", nullable = true)
 	private State state;
@@ -150,5 +151,15 @@ public class Address {
 	public void setCountry(Country country) {
 		this.country = country;
 	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	
 
 }

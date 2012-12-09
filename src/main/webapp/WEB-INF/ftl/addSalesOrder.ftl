@@ -33,6 +33,31 @@
 					
 				</tr>
 				<tr>
+					<td class="td-25">First Name</td>
+					<td><input type="text" class="input-medium" name="firstName" id="firstName" data-id="0"/></td>
+						</select></td>
+					
+				</tr>
+				<tr>
+					<td class="td-25">Last Name</td>
+					<td><input type="text" class="input-medium" name="lastName" id="lastName" data-id="0"/></td>
+					
+				</tr>
+				<tr>
+					<td class="td-25">Sales Person</td>
+					<td><input type="text" class="input-medium" name="salesPerson" id="salesPerson" data-id="0"/></td>
+						</select></td>
+					
+				</tr>
+				
+				
+			</table>
+		</div>
+		<div class="span4">
+			<table class="table">
+				
+				
+				<tr>
 					<td class="td-25">Order Type</td>
 					<td><select name="orderType" class="input-medium" id="orderType" data-id="0">
 								<option value="0">Select Type</option> 
@@ -70,73 +95,6 @@
 		<div class="span4">
 			<table class="table">
 				
-				<tr>
-					<td class="td-25">First Name</td>
-					<td><input type="text" class="input-medium" name="firstName" id="firstName" data-id="0"/></td>
-						</select></td>
-					
-				</tr>
-				<tr>
-					<td class="td-25">Last Name</td>
-					<td><input type="text" class="input-medium" name="lastName" id="lastName" data-id="0"/></td>
-					
-				</tr>
-				<tr>
-					<td class="td-25">Address</td>
-					<td><input type="text" class="input-medium" name="address" id="address" data-id="0"/></td>
-					
-				</tr>
-				
-				<tr>
-					<td class="td-25">City</td>
-					<td><input type="text" class="input-medium" name="enquiryDate" id="enquiryDate" data-id="0"/></td>
-					
-				</tr>
-				<tr>
-					<td class="td-25">State</td>
-					<td><select name="state" class="input-medium" id="state" data-id="0">
-								<option value="0">Select State</option> 
-								
-						</select></td>
-					
-				</tr>
-				<tr>
-					<td class="td-25">Country</td>
-					<td><select name="country" class="input-medium" id="country" data-id="0">
-								<option value="0">Select Country</option> 
-								
-						</select></td>
-					
-				</tr>
-				<tr>
-					<td class="td-25">Phone</td>
-					<td><input type="text" class="input-medium" name="phone" id="phone" data-id="0"/></td>
-					
-				</tr>
-				<tr>
-					<td class="td-25">Mobile</td>
-					<td><input type="text" class="input-medium" name="mobile" id="mobile" data-id="0"/></td>
-					
-				</tr>
-				
-				<tr>
-					<td class="td-25">Email</td>
-					<td><input type="text" class="input-medium" name="email" id="email" data-id="0"/></td>
-					
-				</tr>
-				
-				
-				
-			</table>
-		</div>
-		<div class="span4">
-			<table class="table">
-				<tr>
-					<td class="td-25">Sales Person</td>
-					<td><input type="text" class="input-medium" name="salesPerson" id="salesPerson" data-id="0"/></td>
-						</select></td>
-					
-				</tr>
 				<tr>
 					<td class="td-25">Vendor</td>
 					<td><select name="vendor" class="input-medium" id="vendor" data-id="0">

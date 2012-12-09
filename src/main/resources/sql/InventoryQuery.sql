@@ -120,7 +120,9 @@ create table tblcustomer(
 	customertype integer references tblcustomertype (cid),
 	firstname varchar,
 	lastname varchar,
-	customerImage varchar,
+	gender varchar,
+	age integer,
+	designation varchar,
 	constraint tblcustomer_pk_cid primary key (cid)
 	
 )
@@ -154,23 +156,29 @@ create table tblstate(
 	description varchar
 )
 
-create table tblCustomerAddress(
-	cid serial not null,
-	customerid integer references tblcustomer (cid),
-	contactaddress int,
-	presentaddress int,
-	permanentaddress int,
-	deliveryddress int,
-	constraint tblCustomerAddress_pk_cid primary key (cid),
-	constraint fk_contact_address foreign key (contactaddress)
-		references tblAddress(cid),
-	constraint fk_present_address foreign key (presentaddress)
-		references tblAddress(cid),
-	constraint fk_permanent_address foreign key (permanentaddress)
-		references tblAddress(cid),
-	constraint fk_delivery_ddress foreign key (deliveryddress)
-		references tblAddress(cid)
+CREATE TABLE tblcustomeraddress
+(
+  cid serial NOT NULL,
+  customerid integer,
+  contactaddress integer,
+  presentaddress integer,
+  permanentaddress integer,
+  deliveryaddress integer,
+  CONSTRAINT tblcustomeraddress_pk_cid PRIMARY KEY (cid ),
+  CONSTRAINT fk_contact_address FOREIGN KEY (contactaddress)
+      REFERENCES tbladdress (cid) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION,
+  CONSTRAINT fk_delivery_ddress FOREIGN KEY (deliveryaddress)
+      REFERENCES tbladdress (cid) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION,
+  CONSTRAINT fk_permanent_address FOREIGN KEY (permanentaddress)
+      REFERENCES tbladdress (cid) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION,
+  CONSTRAINT fk_present_address FOREIGN KEY (presentaddress)
+      REFERENCES tbladdress (cid) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
 )
+
 
 create table tblVendorSupplier(
 cid serial not null,

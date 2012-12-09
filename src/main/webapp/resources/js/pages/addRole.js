@@ -34,6 +34,7 @@ $(function() {
 											})
 									.done(
 											function(data) {
+												console.log(data);
 												$(':input[name="roleName"]',
 														this.el).data('id', 0);
 												var tblCls = $('tr.row_'
