@@ -18,10 +18,10 @@
 				<tr class="control-group">
 					<input type="hidden" name="customerId" value="0">
 					<td class="td-25">Customer Type</td>
-					<td><select id="custType" name="customerType" class="input-large">
+					<td><select id="customerType" name="customerType" class="input-large">
 								<option value="">Select Type</option>
-								<#list customerType as customertype>
-									<option value="${customertype.id}">${customertype.description}</option>
+								<#list customerType as custtype>
+									<option value="${custtype.id}">${custtype.description}</option>
 								</#list> 
 						</select></td>
 					

@@ -38,7 +38,7 @@
 			<table class="table">
 						
 						<tr>
-					<td class="td-25">Supplier/Vendor Type</td>
+					<td class="td-25">Type</td>
 					<td ><select name="supplierVendorType" id="supplierVendorType" class="input-medium">
 								<option value="0">Select Type</option> 
 								<option value="1">Product Supplier</option> 

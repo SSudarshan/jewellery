@@ -21,10 +21,11 @@
     <div class="row-fluid">
     	<div class="span12">
     		<table class="table table-striped table-bordered table-ds deliveryList" name="deliveryList" style="width:50%;">
+    			<thead>	
     			<tr>
-    				<td class="center">Delivery Method</td>
-    				<td class="center td-5">Edit</td>
-    				<td class="center td-5">Delete</td>
+    				<th class="center">Delivery Method</th>
+    				<th class="center td-5">Edit</th>
+    				<th class="center td-5">Delete</th>
     			</tr>
     			<#if deliveryList?exists>
     			<#list deliveryList as delivery>

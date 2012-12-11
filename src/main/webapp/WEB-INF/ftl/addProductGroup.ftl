@@ -1,4 +1,4 @@
-<#import "/spring.ftl" as spring />
+0000000000000000000000000000000<#import "/spring.ftl" as spring />
 <#import "macro.ftl" as macro/>
 
 <@macro.showHeader />
@@ -20,12 +20,14 @@
     
     <div class="row-fluid">
     	<div class="span12">
-    		<table class="table table-bordered groupList" name="groupList">
+    		<table class="table table-striped table-bordered table-ds groupList" name="groupList">
+    			<thead>	
     			<tr>
-    				<td class="center">Group Name</td>
-    				<td class="center td-5">Edit</td>
-    				<td class="center td-5">Delete</td>
+    				<th class="center">Group Name</th>
+    				<th class="center td-5">Edit</th>
+    				<th class="center td-5">Delete</th>
     			</tr>
+    			</thead>	
     			<#if groupList?exists>
     			<#list groupList as group>
     			<tr class="row_${group.id}">

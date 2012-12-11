@@ -36,6 +36,18 @@ $(function() {
 											})
 									.done(
 											function(data) {
+												console.log(data);
+												$(':input[name="unitOfMeasurementName"]',
+														this.el).data('id', 0);
+												var tblCls = $('tr.row_'
+														+ data.savedUOMs.id
+														+ ' td:eq(0)');
+												if (tblCls.length > 0) {
+													$(tblCls)
+															.text(
+																	data.savedUOMs.unitOfMeasure);
+
+												} else {
 												var html = '<tr class="row_'
 														+ data.savedUOMs.id
 														+ '"><td>'
@@ -49,6 +61,7 @@ $(function() {
 														.append(html);
 												$(':input[name="unitOfMeasurementName"]')
 														.val('');
+											}
 											});
 
 						},

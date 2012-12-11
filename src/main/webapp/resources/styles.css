@@ -82,7 +82,9 @@ h3, h4 {
 h1, h2, h3 {
     text-shadow: 2px 1px 3px #C9C9C9;
 }
-
+.input-tiny {
+    width: 5px;
+}
 .td-5 {
     width: 5%;
 }

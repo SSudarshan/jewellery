@@ -30,12 +30,19 @@ $(function() {
 															this.el).data('id')
 												},
 												type : 'POST',
-												msgprocessing : {
-													hideMessage : true
-												}
+												
 											})
 									.done(
-											function(data) {
+											function(data){
+												console.log(data);
+												$(':input[name="groupName"]',
+														this.el).data('id', 0);
+												var tblCls = $('tr.row_'
+														+ data.savedPG.id
+														+ ' td:eq(0)');
+												if (tblCls.length > 0) {
+													$(tblCls).text(data.savedPG.groupName);
+												} else {
 												var html = '<tr class="row_'
 														+ data.savedPG.id
 														+ '"><td>'
@@ -46,34 +53,55 @@ $(function() {
 														+ data.savedPG.id
 														+ '"><i class="icon-remove"></i></span></td><tr>';
 												jQuery('table.groupList')
-														.append(html);
-												$(':input[name="groupName"]')
-														.val('');
-											});
+												
+												.append(html);
+									
+									$('span.savePGBtn', this.el).text('Add Group');
+									$(':input[name="groupName"]')
+											.val('');
+												}
+								});
 
 						},
+						
 						deletePG : function(e) {
-							var el = $(e.currentTarget);
-							var id = $(el).data('id');
-							$.ajax({
-								url : 'deletePG.html',
-								data : {
+							bootbox
+									.confirm(
+											"Are you sure want to delete the selected group ?",
+											function(confirmed) {
+												if (confirmed) {
+													var el = $(e.currentTarget);
+													var id = $(el).data('id');
+													$
+															.ajax(
+																	{
+																		url : 'deletePG.html',
+																		data : {
 
-									id : id
-								},
-								type : 'POST',
-								msgprocessing : {
-									hideMessage : true
-								}
-							}).done(function(data) {
-								if (data.success) {
-									var el = $('table.groupList');
-									$('tr.row_' + id, el).remove();
-								} else {
-									alert("Error while deleting the PG");
-								}
+																			id : id
+																		},
+																		type : 'POST',
+																		msgprocessing : {
+																			hideMessage : true
+																		}
+																	})
+															.done(
+																	function(
+																			data) {
+																		if (data.success) {
+																			var el = $('table.groupList');
+																			$(
+																					'tr.row_'
+																							+ id,
+																					el)
+																					.remove();
+																		} else {
+																			alert("Error while deleting the Group");
+																		}
 
-							});
+																	});
+												}
+											});
 
 						},
 						editPG : function(e) {

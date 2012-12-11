@@ -29,27 +29,29 @@
 					<td class="td-25">Customer</td>
 					<td><select name="customerName" class="input-medium" id="customerName" data-id="0">
 								<option value="0">Select Customer</option> 
-						</select></td>
-					
+						</select>
+					<span class="btn btn-mini btn-primary addCustomerBtn" style="vertical-align:top;"><i class="icon-plus"></i></span></td>
 				</tr>
-				<tr>
-					<td class="td-25">First Name</td>
-					<td><input type="text" class="input-medium" name="firstName" id="firstName" data-id="0"/></td>
-						</select></td>
-					
-				</tr>
-				<tr>
-					<td class="td-25">Last Name</td>
-					<td><input type="text" class="input-medium" name="lastName" id="lastName" data-id="0"/></td>
-					
-				</tr>
+				
 				<tr>
 					<td class="td-25">Sales Person</td>
 					<td><input type="text" class="input-medium" name="salesPerson" id="salesPerson" data-id="0"/></td>
 						</select></td>
 					
 				</tr>
+					<tr>
+					<td class="td-33">Delivery Method</td>
+					<td><select name="deliveryMethod" class="input-medium" id="deliveryMethod" data-id="0">
+								<option value="0">Select Method</option> 
+								
+						</select></td>
+					
+				</tr>
+				<tr>
+					<td class="td-33">Delivery Date</td>
+					<td><input type="text" class="input-medium" name="deliveryDate" id="deliveryDate" data-id="0"/></td>
 				
+				</tr>
 				
 			</table>
 		</div>
@@ -83,17 +85,6 @@
 					<td ><input type="text" class="input-medium" name="furnishDate" id="furnishDate" data-id="0"/></td>
 					
 				</tr>
-				<tr>
-					<td class="td-33">Delivery Date</td>
-					<td><input type="text" class="input-medium" name="deliveryDate" id="deliveryDate" data-id="0"/></td>
-				
-				</tr>
-				
-				
-			</table>
-		</div>
-		<div class="span4">
-			<table class="table">
 				
 				<tr>
 					<td class="td-25">Vendor</td>
@@ -103,20 +94,14 @@
 						</select></td>
 					
 				</tr>
-				
-				
+			</table>
+		</div>
+		<div class="span4">
+			<table class="table">
 				
 				
 				<tr>
-					<td class="td-33">Delivery Method</td>
-					<td><select name="deliveryMethod" class="input-medium" id="deliveryMethod" data-id="0">
-								<option value="0">Select Method</option> 
-								
-						</select></td>
-					
-				</tr>
-				<tr>
-					<td class="td-25">Discount (%)</td>
+					<td class="td-33">Discount (%)</td>
 					<td><select name="discount" class="input-medium" id="discount" data-id="0">
 								<option value="0">Select Discount</option> 
 								
@@ -124,7 +109,7 @@
 					
 				</tr>
 				<tr>
-					<td class="td-25">Tax</td>
+					<td class="td-33">Tax</td>
 					<td><select name="tax" class="input-medium" id="tax" data-id="0">
 								<option value="0">Select tax</option> 
 								
@@ -132,18 +117,18 @@
 					
 				</tr>
 				<tr>
-					<td class="td-25">Product Group</td>
+					<td class="td-33">Product Group</td>
 					<td><select name="productGroup" class="input-medium" id="productGroup" data-id="0">
 								<option value="0">Select Group</option> 
 						</select></td>
 						</tr>
 						<tr>
-					<td class="td-25">Comments</td>
+					<td class="td-33">Comments</td>
 					<td><textarea class="input-medium" name="comments" id="comments" rows="3" ></textarea></td>
 					
 				</tr>
 				<tr>
-					<td class="td-25">Order Code</td>
+					<td class="td-33">Order Code</td>
 					<td><select name="orderCode" class="input-medium" id="orderCode" data-id="0">
 								<option value="0">Select Code</option> 
 						</select></td>
@@ -164,11 +149,10 @@
 					
 				
 					<td >Description </td>
-					<td><input type="text" class="input-medium" name="productDesc" id="productDesc" data-id="0"/></td>
+					<td><input type="text" class="input-xxlarge" name="productDesc" id="productDesc" data-id="0"/></td>
 					<td >Weight </td>
 					<td><input type="text" class="input-small" name="weight" id="weight" data-id="0"/></td>
-					<td >Quantity </td>
-					<td><input type="text" class="input-small" name="quantity" id="quantity" data-id="0"/></td>
+					
 				
 					
 				
@@ -179,7 +163,8 @@
 			<table class="table">
 				<tr>
 					
-					
+					<td >Quantity </td>
+					<td><input type="text" class="input-small" name="quantity" id="quantity" data-id="0"/></td>
 				
 					<td>Price</td>
 					<td><input type="text" class="input-medium" name="price" id="price" data-id="0"/></td>
@@ -227,7 +212,7 @@
     	<div class="span12">
 		<table class="table">
 				<tr>
-		<td><span class="btn btn-primary saveCompanyBtn" style="vertical-align:top;">Add</span></td>
+		<td><span class="btn btn-primary saveCompanyBtn" style="vertical-align:top;">Save All</span></td>
 		<td><input type="text" class="input-medium" name="total" id="total" data-id="0"/></td>
 		</tr>
 		</table>

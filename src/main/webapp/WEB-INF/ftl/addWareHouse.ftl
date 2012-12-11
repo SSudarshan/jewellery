@@ -4,7 +4,7 @@
 <@macro.showHeader />
 <div class="inner-col" id ="mainDiv">
 	<div>
-        <h3>Add Roles</h3>
+        <h3>Add Warehouse</h3>
     </div>
     <div class="row-fluid">
 		<div class="span12">
@@ -20,13 +20,14 @@
     
     <div class="row-fluid">
     	<div class="span12">
-    		<table class="table table-striped table-bordered table-ds  houseList" name="houseList">
+    		<table class="table table-striped table-bordered table-ds  houseList" name="houseList"  style="width:50%;">
+    			<thead>	
     			<tr>
-    				<td class="center">Ware House</td>
-    				<td class="center td-5">Edit</td>
-    				<td class="center td-5">Delete</td>
-    			</tr>
-    			<#if wareList?exists>
+    				<th class="center">Ware House</th>
+    				<th class="center td-5">Edit</th>
+    				<th class="center td-5">Delete</th>
+    			</tr></thead>	
+    			<#if houseList?exists>
     			<#list houseList as ware>
     			<tr class="row_${ware.id}">
     				<td>${ware.warehouse}</td>

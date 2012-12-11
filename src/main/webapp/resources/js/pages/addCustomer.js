@@ -96,8 +96,12 @@ $(function() {
 					dataType : "json",
 					beforeSubmit : function(arr, $form, options) {
 					},
-					success : function() {
-						bootbox.alert("Customer Added Successfully.")
+					success : function(data) {
+						if(data.success){
+						bootbox.alert("Customer Added Successfully.");
+						}else{
+							bootbox.alert("Error while saving customer.");
+						}
 					}
 				});
 			}

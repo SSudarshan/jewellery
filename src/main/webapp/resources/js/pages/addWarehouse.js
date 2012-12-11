@@ -26,16 +26,26 @@ $(function() {
 															':input[name="wareHouseName"]',
 															this.el).val(),
 													id : $(
-															':input[name="roleName"]',
+															':input[name="wareHouseName"]',
 															this.el).data('id')
 												},
 												type : 'POST',
-												msgprocessing : {
-													hideMessage : true
-												}
+												
 											})
 									.done(
 											function(data) {
+												console.log(data);
+												$(':input[name="wareHouseName"]',
+														this.el).data('id', 0);
+												var tblCls = $('tr.row_'
+														+ data.savedWarehouse.id
+														+ ' td:eq(0)');
+												if (tblCls.length > 0) {
+													$(tblCls)
+															.text(
+																	data.savedWarehouse.warehouse);
+
+												} else {
 												var html = '<tr class="row_'
 														+ data.savedWarehouse.id
 														+ '"><td>'
@@ -47,33 +57,51 @@ $(function() {
 														+ '"><i class="icon-remove"></i></span></td><tr>';
 												jQuery('table.houseList')
 														.append(html);
+												}
+												$('span.saveWareBtn', this.el).text('Add Ware');
 												$(':input[name="wareHouseName"]')
 														.val('');
 											});
 
 						},
 						deleteWarehouse : function(e) {
-							var el = $(e.currentTarget);
-							var id = $(el).data('id');
-							$.ajax({
-								url : 'deleteWarehouse.html',
-								data : {
+							bootbox
+									.confirm(
+											"Are you sure want to delete the selected ?",
+											function(confirmed) {
+												if (confirmed) {
+													var el = $(e.currentTarget);
+													var id = $(el).data('id');
+													$
+															.ajax(
+																	{
+																		url : 'deleteWarehouse.html',
+																		data : {
 
-									id : id
-								},
-								type : 'POST',
-								msgprocessing : {
-									hideMessage : true
-								}
-							}).done(function(data) {
-								if (data.success) {
-									var el = $('table.houseList');
-									$('tr.row_' + id, el).remove();
-								} else {
-									alert("Error while deleting the Role");
-								}
+																			id : id
+																		},
+																		type : 'POST',
+																		msgprocessing : {
+																			hideMessage : true
+																		}
+																	})
+															.done(
+																	function(
+																			data) {
+																		if (data.success) {
+																			var el = $('table.houseList');
+																			$(
+																					'tr.row_'
+																							+ id,
+																					el)
+																					.remove();
+																		} else {
+																			alert("Error while deleting");
+																		}
 
-							});
+																	});
+												}
+											});
 
 						},
 						editWarehouse : function(e) {

@@ -11,7 +11,7 @@
 			<table class="table">
 				<tr>
 					<td class="td-10">Customer Type</td>
-					<td class="td-15"><input type="text" class="input-large" name="customerType" id="customerType" data-id="0"/></td>
+					<td class="td-15"><input type="text" class="input-large" name="description" id="description" data-id="0"/></td>
 					<td><span class="btn btn-primary saveTypeBtn" style="vertical-align:top;">Add Type</span>
 				</tr>
 			</table>
@@ -20,16 +20,18 @@
     
     <div class="row-fluid">
     	<div class="span12">
-    		<table class="table table-bordered typeList" name="typeList">
+    		<table class="table table-striped table-bordered table-ds typeList" name="typeList">
+    			<thead>	
     			<tr>
-    				<td class="center">Customer Type</td>
-    				<td class="center td-5">Edit</td>
-    				<td class="center td-5">Delete</td>
+    				<th class="center">Customer Type</th>
+    				<th class="center td-5">Edit</th>
+    				<th class="center td-5">Delete</th>
     			</tr>
+    			</thead>	
     			<#if typeList?exists>
     			<#list typeList as type>
     			<tr class="row_${type.id}">
-    				<td>${type.customerType}</td>
+    				<td>${type.description}</td>
     				<td class="center td-5"><span class="btn btn-success editCType" data-id="${type.id}"><i class="icon-pencil"></i></span></td>
     				<td class="center td-5"><span class="btn btn-danger deleteCType" data-id="${type.id}"><i class="icon-remove"></i></span></td>
     			</tr>

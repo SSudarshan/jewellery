@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.defysope.core.BusinessObjectEditor2;
@@ -39,7 +40,7 @@ public class AddCustomerController {
 		return new ModelAndView("addCustomer", model);
 	}
 
-	@RequestMapping(value = "/saveCustomer")
+	/*@RequestMapping(value = "/saveCustomer")
 	public ModelAndView addUser(HttpServletRequest request,
 			@ModelAttribute("customer") Customer customer,
 			@ModelAttribute("address") Address address,
@@ -52,6 +53,29 @@ public class AddCustomerController {
 		customerAddress.setContactAddress(address);
 		masterService.saveObject(customerAddress);
 		return new ModelAndView("addCustomer", model);
+	}*/
+	@RequestMapping(value = "/saveCustomer")
+	public @ResponseBody
+	Object deleteRole(HttpServletRequest request,
+			@ModelAttribute("customer") Customer customer,
+			@ModelAttribute("address") Address address,
+			@ModelAttribute("delivery") DeliveryAddress daddress) {
+		Map<String, Object> model = new HashMap<String, Object>();
+		try {
+
+			masterService.saveObject(customer);
+			masterService.saveObject(address);
+			CustomerAddress customerAddress = new CustomerAddress();
+			customerAddress.setCustomerId(customer);
+			customerAddress.setContactAddress(address);
+			masterService.saveObject(customerAddress);
+			model.put("success", true);
+		} catch (Exception e) {
+			model.put("success", false);
+		}
+
+		return model;
+
 	}
 
 	@InitBinder

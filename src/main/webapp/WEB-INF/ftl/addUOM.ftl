@@ -19,12 +19,13 @@
     </div>
     <div class="row-fluid">
     	<div class="span12">
-    		<table class="table table-bordered uomList" name="uomList">
+    		<table class="table table-striped table-bordered table-ds uomList" name="uomList">
+    			<thead>	
     			<tr>
-    				<td class="center">UOM</td>
-    				<td class="center td-5">Edit</td>
-    				<td class="center td-5">Delete</td>
-    			</tr>
+    				<th class="center">UOM</th>
+    				<th class="center td-5">Edit</th>
+    				<th class="center td-5">Delete</th>
+    			</tr></thead>	
     			<#if uomList?exists>
     			<#list uomList as uom>
     			<tr class="row_${uom.id}">
