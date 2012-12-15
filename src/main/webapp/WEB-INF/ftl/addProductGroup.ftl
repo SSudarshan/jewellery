@@ -1,4 +1,4 @@
-0000000000000000000000000000000<#import "/spring.ftl" as spring />
+<#import "/spring.ftl" as spring />
 <#import "macro.ftl" as macro/>
 
 <@macro.showHeader />
@@ -20,7 +20,7 @@
     
     <div class="row-fluid">
     	<div class="span12">
-    		<table class="table table-striped table-bordered table-ds groupList" name="groupList">
+    		<table class="table table-striped table-bordered table-ds groupList" style="width:50%;" name="groupList">
     			<thead>	
     			<tr>
     				<th class="center">Group Name</th>

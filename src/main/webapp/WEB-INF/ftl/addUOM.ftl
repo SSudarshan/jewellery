@@ -19,7 +19,7 @@
     </div>
     <div class="row-fluid">
     	<div class="span12">
-    		<table class="table table-striped table-bordered table-ds uomList" name="uomList">
+    		<table class="table table-striped table-bordered table-ds uomList" name="uomList" style="width:50%;">
     			<thead>	
     			<tr>
     				<th class="center">UOM</th>

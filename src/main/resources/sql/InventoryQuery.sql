@@ -81,6 +81,16 @@ create table tblcustomertype(
 	constraint tblcustomertype_pk_cid primary key (cid)
 )
 
+create table tblcountry(
+	cid serial primary key,
+	description varchar
+)
+
+create table tblstate(
+	cid serial primary key,
+	country integer references tblcountry (cid), 
+	description varchar
+)
 
 create table tblcompany(
 	cid serial primary key,
@@ -143,17 +153,6 @@ CREATE TABLE tblAddress (
 	NAME character varying (200) NULL ,
 	extnno character varying (200) NULL ,
 	constraint pk_tblAddress primary key (cid)
-)
-
-create table tblcountry(
-	cid serial primary key,
-	description varchar
-)
-
-create table tblstate(
-	cid serial primary key,
-	country integer references tblcountry (cid), 
-	description varchar
 )
 
 CREATE TABLE tblcustomeraddress
@@ -229,7 +228,7 @@ uom  integer references tbluom(cid),
 productgroup integer references tblproductgroup(cid),
 supplierid  integer references tblVendorSupplier(cid),
 brandid  integer references tblbrand(cid),
-product_code varhcar(50),
+product_code varchar(50),
 description varchar(200),
 binlocation varchar(100),
 avglandcost integer,
@@ -237,7 +236,7 @@ lastcost integer,
 default_purchase_price integer,
 default_sell_price integer,
 weight varchar(50),
-modelno varchar(50)
+modelno varchar(50),
 notes varchar(1000),
 barcode varchar(50),
 constraint tblproduct_pk_cid primary key (cid)

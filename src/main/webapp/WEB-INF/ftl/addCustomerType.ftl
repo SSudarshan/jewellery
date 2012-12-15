@@ -20,7 +20,7 @@
     
     <div class="row-fluid">
     	<div class="span12">
-    		<table class="table table-striped table-bordered table-ds typeList" name="typeList">
+    		<table class="table table-striped table-bordered table-ds typeList" style="width:50%;" name="typeList">
     			<thead>	
     			<tr>
     				<th class="center">Customer Type</th>
