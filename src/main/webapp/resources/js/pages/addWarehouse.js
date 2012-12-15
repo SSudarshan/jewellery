@@ -7,15 +7,16 @@ $(function() {
 						init : function(el, options) {
 							this.el = $(el);
 							$.extend(this.options, options);
-							$('span.saveWareBtn', this.el).on('click',
+							$('span.saveWareBtn', this.el).live('click',
 									this.callback('addWarehouse'));
-							$('span.deleteWarehouse', this.el).on('click',
+							$('span.deleteWarehouse', this.el).live('click',
 									this.callback('deleteWarehouse'));
-							$('span.editWarehouse', this.el).on('click',
+							$('span.editWarehouse', this.el).live('click',
 									this.callback('editWarehouse'));
 
 						},
 						addWarehouse : function() {
+							$('.saveWareBtn', this.el).addClass('disabled');
 							$
 									.ajax(
 											{
@@ -30,12 +31,19 @@ $(function() {
 															this.el).data('id')
 												},
 												type : 'POST',
-												
+												error : function() {
+													$('.saveWareBtn', this.el)
+															.removeClass(
+																	'disabled');
+												}
+
 											})
 									.done(
 											function(data) {
-												console.log(data);
-												$(':input[name="wareHouseName"]',
+												$('.saveWareBtn', this.el)
+														.removeClass('disabled');
+												$(
+														':input[name="wareHouseName"]',
 														this.el).data('id', 0);
 												var tblCls = $('tr.row_'
 														+ data.savedWarehouse.id
@@ -46,20 +54,22 @@ $(function() {
 																	data.savedWarehouse.warehouse);
 
 												} else {
-												var html = '<tr class="row_'
-														+ data.savedWarehouse.id
-														+ '"><td>'
-														+ data.savedWarehouse.warehouse
-														+ '</td><td><span class="btn btn-success editWarehouse" data-id="'
-														+ data.savedWarehouse.id
-														+ '"><i class="icon-pencil"></i></span></td><td><span class="btn btn-danger deleteWarehouse" data-id="'
-														+ data.savedWarehouse.id
-														+ '"><i class="icon-remove"></i></span></td><tr>';
-												jQuery('table.houseList')
-														.append(html);
+													var html = '<tr class="row_'
+															+ data.savedWarehouse.id
+															+ '"><td>'
+															+ data.savedWarehouse.warehouse
+															+ '</td><td><span class="btn btn-success editWarehouse" data-id="'
+															+ data.savedWarehouse.id
+															+ '"><i class="icon-pencil"></i></span></td><td><span class="btn btn-danger deleteWarehouse" data-id="'
+															+ data.savedWarehouse.id
+															+ '"><i class="icon-remove"></i></span></td></tr>';
+													jQuery('table.houseList')
+															.append(html);
 												}
-												$('span.saveWareBtn', this.el).text('Add Ware');
-												$(':input[name="wareHouseName"]')
+												$('span.saveWareBtn', this.el)
+														.text('Add Ware');
+												$(
+														':input[name="wareHouseName"]')
 														.val('');
 											});
 
@@ -96,7 +106,7 @@ $(function() {
 																					el)
 																					.remove();
 																		} else {
-																			alert("Error while deleting");
+																			alert("Error occured while process the request.");
 																		}
 
 																	});

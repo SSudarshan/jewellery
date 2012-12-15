@@ -7,15 +7,16 @@ $(function() {
 						init : function(el, options) {
 							this.el = $(el);
 							$.extend(this.options, options);
-							$('span.savePGBtn', this.el).on('click',
+							$('span.savePGBtn', this.el).live('click',
 									this.callback('addProductGroup'));
-							$('span.deletePG', this.el).on('click',
+							$('span.deletePG', this.el).live('click',
 									this.callback('deletePG'));
-							$('span.editPG', this.el).on('click',
+							$('span.editPG', this.el).live('click',
 									this.callback('editPG'));
 
 						},
 						addProductGroup : function() {
+							$('.savePGBtn', this.el).addClass('disabled');
 							$
 									.ajax(
 											{
@@ -30,40 +31,48 @@ $(function() {
 															this.el).data('id')
 												},
 												type : 'POST',
-												
+												error : function() {
+													$('.savePGBtn', this.el)
+															.removeClass(
+																	'disabled');
+												}
+
 											})
 									.done(
-											function(data){
-												console.log(data);
+											function(data) {
+
+												$('.savePGBtn', this.el)
+														.removeClass('disabled');
 												$(':input[name="groupName"]',
 														this.el).data('id', 0);
 												var tblCls = $('tr.row_'
 														+ data.savedPG.id
 														+ ' td:eq(0)');
 												if (tblCls.length > 0) {
-													$(tblCls).text(data.savedPG.groupName);
+													$(tblCls)
+															.text(
+																	data.savedPG.groupName);
 												} else {
-												var html = '<tr class="row_'
-														+ data.savedPG.id
-														+ '"><td>'
-														+ data.savedPG.groupName
-														+ '</td><td><span class="btn btn-success editPG" data-id="'
-														+ data.savedPG.id
-														+ '"><i class="icon-pencil"></i></span></td><td><span class="btn btn-danger deletePG" data-id="'
-														+ data.savedPG.id
-														+ '"><i class="icon-remove"></i></span></td><tr>';
-												jQuery('table.groupList')
-												
-												.append(html);
-									
-									$('span.savePGBtn', this.el).text('Add Group');
-									$(':input[name="groupName"]')
-											.val('');
+													var html = '<tr class="row_'
+															+ data.savedPG.id
+															+ '"><td>'
+															+ data.savedPG.groupName
+															+ '</td><td><span class="btn btn-success editPG" data-id="'
+															+ data.savedPG.id
+															+ '"><i class="icon-pencil"></i></span></td><td><span class="btn btn-danger deletePG" data-id="'
+															+ data.savedPG.id
+															+ '"><i class="icon-remove"></i></span></td></tr>';
+													jQuery('table.groupList')
+															.append(html);
 												}
-								});
+												$('span.savePGBtn', this.el)
+														.text('Add Group');
+												$('input[name="groupName"]',
+														this.el).val('');
+											});
 
 						},
-						
+
 						deletePG : function(e) {
 							bootbox
 									.confirm(
@@ -96,7 +105,7 @@ $(function() {
 																					el)
 																					.remove();
 																		} else {
-																			alert("Error while deleting the Group");
+																			alert("Error occured while process the request.");
 																		}
 
 																	});

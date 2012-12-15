@@ -4,7 +4,7 @@
 <@macro.showHeader />
 <div class="inner-col" id ="mainDiv">
 	<div>
-        <h3>Add Roles</h3>
+        <h3>Add Taxes</h3>
     </div>
     <div class="row-fluid">
 		<div class="span12">

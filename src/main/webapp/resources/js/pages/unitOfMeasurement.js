@@ -7,15 +7,16 @@ $(function() {
 						init : function(el, options) {
 							this.el = $(el);
 							$.extend(this.options, options);
-							$('span.saveUOMBtn', this.el).on('click',
+							$('.saveUOMBtn', this.el).live('click',
 									this.callback('addUOM'));
-							$('span.deleteUOM', this.el).on('click',
+							$('.deleteUOM', this.el).live('click',
 									this.callback('deleteUOM'));
-							$('span.editUOM', this.el).on('click',
+							$('.editUOM', this.el).live('click',
 									this.callback('editUOM'));
 
 						},
 						addUOM : function() {
+							$('.saveUOMBtn', this.el).addClass('disabled');
 							$
 									.ajax(
 											{
@@ -32,6 +33,11 @@ $(function() {
 												type : 'POST',
 												msgprocessing : {
 													hideMessage : true
+												},
+												error : function() {
+													$('.saveUOMBtn', this.el)
+															.removeClass(
+																	'disabled');
 												}
 											})
 									.done(
@@ -42,6 +48,8 @@ $(function() {
 												var tblCls = $('tr.row_'
 														+ data.savedUOMs.id
 														+ ' td:eq(0)');
+												$('.saveUOMBtn', this.el)
+														.removeClass('disabled');
 												if (tblCls.length > 0) {
 													$(tblCls)
 															.text(
@@ -56,24 +64,16 @@ $(function() {
 															+ data.savedUOMs.id
 															+ '"><i class="icon-pencil"></i></span></td><td><span class="btn btn-danger deleteUOM" data-id="'
 															+ data.savedUOMs.id
-															+ '"><i class="icon-remove"></i></span></td><tr>';
-													jQuery('table.uomList')
+															+ '"><i class="icon-remove"></i></span></td></tr>';
+													$('table.uomList', this.el)
+															.find('tbody')
 															.append(html);
-													$(
-															':input[name="unitOfMeasurementName"]')
-															.val('');
-													$('span.deleteUOM', this.el)
-															.on(
-																	'click',
-																	this
-																			.callback('deleteUOM'));
-													$('span.editUOM', this.el)
-															.on(
-																	'click',
-																	this
-																			.callback('editUOM'));
 												}
-
+												$(
+														'input[name="unitOfMeasurementName"]',
+														this.el).val('');
+												$('span.saveUOMBtn', this.el)
+														.text('Add UOM');
 											});
 
 						},
@@ -110,7 +110,7 @@ $(function() {
 																					el)
 																					.remove();
 																		} else {
-																			alert("Error while deleting the Role");
+																			alert("Error occured while process the request.");
 																		}
 
 																	});
@@ -121,11 +121,11 @@ $(function() {
 						editUOM : function(e) {
 							var el = $(e.currentTarget);
 							var id = $(el).data('id');
-							$(':input[name="unitOfMeasurementName"]').data(
-									'id', id);
+							$(':input[name="unitOfMeasurementName"]', this.el)
+									.data('id', id);
 							var tempEl = $("tr.row_" + id + " td:eq(0)").text();
-							$(':input[name="unitOfMeasurementName"]').val(
-									tempEl);
+							$(':input[name="unitOfMeasurementName"]', this.el)
+									.val(tempEl);
 
 							$('span.saveUOMBtn', this.el).text('Update UOM');
 

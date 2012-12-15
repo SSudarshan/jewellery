@@ -10,7 +10,7 @@
 		<div class="span12">
 			<table class="table">
 				<tr>
-					<td class="td-10">Warehouse Name</td>
+					<td class="td-15">Warehouse Name</td>
 					<td class="td-15"><input type="text" class="input-large" name="wareHouseName" id="wareHouseName" data-id="0"/></td>
 					<td><span class="btn btn-primary saveWareBtn" style="vertical-align:top;">Add</span></td>
 				</tr>
