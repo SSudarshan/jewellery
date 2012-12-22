@@ -59,6 +59,10 @@ http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
 		</property>
 		<property name="packagesToScan" value="com.defysope"></property>
 	</bean>
+	
+	 <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">  
+        <property name="dataSource" ref="dataSource" />  
+    </bean>  
 
 	<bean id="emf"
 		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">

@@ -2,6 +2,7 @@
 <#import "macro.ftl" as macro/>
 
 <@macro.showHeader />
+<input type="text" <#if deepak?exists && deepak !="">value="${deepak}"</#if>
 <div class="inner-col" id ="mainDiv">
 	<form  name="customerForm" class="customerForm">
 	<div class="row-fluid">

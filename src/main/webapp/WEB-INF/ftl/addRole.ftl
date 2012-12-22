@@ -20,7 +20,7 @@
     
     <div class="row-fluid">
     	<div class="span12">
-    		<table class="table table-striped table-bordered table-ds roleList" name="roleList" style="width:50%;">
+    		<table class="table table-bordered table-ds roleList" name="roleList" style="width:50%;">
     		 <thead>
     			<tr>
     				<th class="center">Role Name</th>

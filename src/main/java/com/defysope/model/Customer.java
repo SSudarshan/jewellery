@@ -22,15 +22,15 @@ public class Customer {
 	private int id;
 
 	@ManyToOne(targetEntity = FinancialMonth.class, fetch = FetchType.EAGER)
-	@JoinColumn(name = "monthId", nullable = false)
+	@JoinColumn(name = "monthId", nullable = true)
 	private FinancialMonth monthId;
 
 	@ManyToOne(targetEntity = Company.class, fetch = FetchType.EAGER)
-	@JoinColumn(name = "companyId", nullable = false)
+	@JoinColumn(name = "companyId", nullable = true)
 	private Company companyId;
 
 	@ManyToOne(targetEntity = CustomerType.class, fetch = FetchType.EAGER)
-	@JoinColumn(name = "customerType", nullable = false)
+	@JoinColumn(name = "customerType", nullable = true)
 	private CustomerType customerType;
 
 	private String firstName;

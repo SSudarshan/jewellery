@@ -16,3 +16,7 @@
 <script type="text/javascript" src="${rc.getContextPath()}/resources/select2/select2.js"></script>
 <script type="text/javascript" src="${rc.getContextPath()}/resources/bootstrap/bootstrap.min.js"></script>
 <script type="text/javascript" src="${rc.getContextPath()}/resources/utils.js"></script>
+<script type="text/javascript" src="${rc.getContextPath()}/resources/js/jquery-ui-1.9.2.custom.min.js"></script>
+<script type="text/javascript" src="${rc.getContextPath()}/resources/js/grid.locale-en.js"></script>
+<script type="text/javascript" src="${rc.getContextPath()}/resources/js/jquery.jqGrid.src.js"></script>
+

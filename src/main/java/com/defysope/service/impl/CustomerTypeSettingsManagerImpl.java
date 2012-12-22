@@ -17,20 +17,30 @@ import com.defysope.service.CustomerTypeSettingsManager;
 public class CustomerTypeSettingsManagerImpl implements CustomerTypeSettingsManager{
 
 	@Autowired
-	private CustomerTypeSettingsDao customerTypeSettingsManager;
+	private CustomerTypeSettingsDao customerTypeSettingsDao;
 	
 	public List<Map<String, Object>> getCType() {
 		
-		return customerTypeSettingsManager.getCType();
+		return customerTypeSettingsDao.getCType();
 	}
 
 	public CustomerType saveCtype(CustomerType type) {
 		
-		return customerTypeSettingsManager.saveCtype(type);
+		return customerTypeSettingsDao.saveCtype(type);
 	}
 
 	public void removeCType(int id) {
-		customerTypeSettingsManager.removeCType(id);
+		customerTypeSettingsDao.removeCType(id);
+		
+	}
+
+	public List<Map<String, Object>> getGridData(int customerType) {
+		return customerTypeSettingsDao.getGridData(customerType);
+	}
+
+	public void deleleCustomer(int id) {
+		
+	customerTypeSettingsDao.deleleCustomer(id);
 		
 	}
 

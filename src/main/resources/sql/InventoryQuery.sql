@@ -18,21 +18,21 @@ CREATE TABLE tblboardrate
 
 CREATE TABLE tbldeliverymethod
 (
- cid serial not null,
-  deliverymehtod character varying(255),
+  cid serial not null,
+  description character varying(255),
   CONSTRAINT tbldeliverymethod_pkey PRIMARY KEY (cid )
 )
 CREATE TABLE tblordertype
 (
- cid serial not null,
-  ordertype character varying(255),
+  cid serial not null,
+  description character varying(255),
   CONSTRAINT tbltblordertype_pkey PRIMARY KEY (cid )
 )
 
 CREATE TABLE tblbrand
 (
- cid serial not null,
-  brandname character varying(255),
+  cid serial not null,
+  description character varying(255),
   CONSTRAINT tblbrand_pkey PRIMARY KEY (cid )
 )
 
@@ -55,21 +55,21 @@ CREATE TABLE tbltax
 CREATE TABLE tblproductgroup
 (
   cid serial not null,
-  groupname character varying(255),
+  description character varying(255),
   CONSTRAINT tblproductgroup_pkey PRIMARY KEY (cid )
 )
 
 CREATE TABLE tbluom
 (
  cid serial not null,
-  unitofmeasure character varying(255),
+  description character varying(255),
   CONSTRAINT tbluom_pkey PRIMARY KEY (cid )
 )
 
 CREATE TABLE tblwarehouse
 (
   cid serial not null,
-  warehouse character varying(255),
+  description character varying(255),
   CONSTRAINT tblwarehouse_pkey PRIMARY KEY (cid  )
 )
 
@@ -151,7 +151,7 @@ CREATE TABLE tblAddress (
 	mobile character varying (200) NULL ,
 	EMAIL character varying (200) NULL ,
 	NAME character varying (200) NULL ,
-	extnno character varying (200) NULL ,
+	extno character varying (200) NULL ,
 	constraint pk_tblAddress primary key (cid)
 )
 
@@ -216,7 +216,7 @@ warehouseid integer references tblwarehouse(cid),
 orderdate date,
 deliverydate date,
 quantity int,
-price double,
+price numeric(18,4),
 comments varchar(1000),
 constraint tblPurchase_pk_cid primary key (cid)
 

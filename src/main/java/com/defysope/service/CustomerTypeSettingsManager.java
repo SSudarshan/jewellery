@@ -13,5 +13,9 @@ public interface CustomerTypeSettingsManager {
 	
 	void removeCType(int id);
 
+	List<Map<String, Object>> getGridData(int customerType);
+
+	void deleleCustomer(int id);
+
 
 }

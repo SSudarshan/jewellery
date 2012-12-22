@@ -3,7 +3,9 @@ package com.defysope.model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.core.sym.Name;
@@ -13,7 +15,8 @@ import com.fasterxml.jackson.core.sym.Name;
 public class DeliveryMethod {
 	
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.AUTO, generator = "tbldeliverymethod_cid_gen")
+	@SequenceGenerator(name = "tbldeliverymethod_cid_gen", sequenceName = "tbldeliverymethod_cid_seq")
 	@Column(name="cid")
 	int id;
 	

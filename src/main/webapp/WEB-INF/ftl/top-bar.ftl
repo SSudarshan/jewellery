@@ -1,14 +1,15 @@
 <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="navbar-inner">
+      <div class="navbar-inner container">
         <div class="container">
-	          <button data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar" type="button">
+	          <a data-target=".navbar-inverse-collapse" data-toggle="collapse" class="btn btn-navbar collapsed">
 	            <span class="icon-bar"></span>
 	            <span class="icon-bar"></span>
 	            <span class="icon-bar"></span>
-	          </button>
+	         </a>
 			<a class="brand" href="#">Defysope Inventory</a>
+			<div class="nav-collapse navbar-inverse-collapse collapse" style="height: 0px;">
         	<ul class="nav">
-                      <li class="active"><a href="#">Dashboard</a></li>
+                      <li><a href="#">Dashboard</a></li>
                       <li class="dropdown">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">Purchase <b class="caret"></b></a>
                         <ul class="dropdown-menu">
@@ -31,7 +32,7 @@
                           <li class="nav-header">Customers</li>
                            <li><a href="${rc.getContextPath()}/addProductEnquiry.html">Product Enquiry</a></li>
                           <li><a href="${rc.getContextPath()}/addCustomer.html">New Customer</a></li>
-                          <li><a href="#">View Customers</a></li>
+                          <li><a href="${rc.getContextPath()}/viewCustomer.html">View Customers</a></li>
                            <li><a href="${rc.getContextPath()}/addSalesOrder.html">New Sales Order</a></li>
                           <li><a href="#">View Sales Order</a></li>
                           <li class="divider"></li>
@@ -81,6 +82,7 @@
                       </li>
                       
                     </ul>
+                 </div> 
          </div>
        </div>
 </div>        

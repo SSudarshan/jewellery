@@ -19,6 +19,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.defysope.core.BusinessObjectEditor2;
 import com.defysope.dummy.DeliveryAddress;
 import com.defysope.model.Address;
+import com.defysope.model.Company;
 import com.defysope.model.Country;
 import com.defysope.model.Customer;
 import com.defysope.model.CustomerAddress;
@@ -33,27 +34,37 @@ public class AddCustomerController {
 	private MasterService masterService;
 
 	@RequestMapping(value = "/addCustomer", method = RequestMethod.GET)
-	public ModelAndView index(@ModelAttribute("model") ModelMap model) {
+	public ModelAndView index(HttpServletRequest request,
+			@ModelAttribute("model") ModelMap model) {
+		String customerId = request.getParameter("id");
+		if (customerId != null) {
+			model.put("cutomer",
+					masterService.getObject(Customer.class, Integer.parseInt(customerId)));
+		}
 		model.put("customerType", masterService.getObjects(CustomerType.class));
 		model.put("states", masterService.getObjects(State.class));
 		model.put("countryList", masterService.getObjects(Country.class));
+		//model.put("deepak", "deepak");
 		return new ModelAndView("addCustomer", model);
 	}
 
-	/*@RequestMapping(value = "/saveCustomer")
-	public ModelAndView addUser(HttpServletRequest request,
-			@ModelAttribute("customer") Customer customer,
-			@ModelAttribute("address") Address address,
-			@ModelAttribute("delivery") DeliveryAddress daddress) {
-		Map<String, Object> model = new HashMap<String, Object>();
-		masterService.saveObject(customer);
-		masterService.saveObject(address);
-		CustomerAddress customerAddress = new CustomerAddress();
-		customerAddress.setCustomerId(customer);
-		customerAddress.setContactAddress(address);
-		masterService.saveObject(customerAddress);
-		return new ModelAndView("addCustomer", model);
-	}*/
+	/*
+	 * @RequestMapping(value = "/saveCustomer") public ModelAndView
+	 * addUser(HttpServletRequest request,
+	 * 
+	 * @ModelAttribute("customer") Customer customer,
+	 * 
+	 * @ModelAttribute("address") Address address,
+	 * 
+	 * @ModelAttribute("delivery") DeliveryAddress daddress) { Map<String,
+	 * Object> model = new HashMap<String, Object>();
+	 * masterService.saveObject(customer); masterService.saveObject(address);
+	 * CustomerAddress customerAddress = new CustomerAddress();
+	 * customerAddress.setCustomerId(customer);
+	 * customerAddress.setContactAddress(address);
+	 * masterService.saveObject(customerAddress); return new
+	 * ModelAndView("addCustomer", model); }
+	 */
 	@RequestMapping(value = "/saveCustomer")
 	public @ResponseBody
 	Object deleteRole(HttpServletRequest request,
@@ -62,7 +73,7 @@ public class AddCustomerController {
 			@ModelAttribute("delivery") DeliveryAddress daddress) {
 		Map<String, Object> model = new HashMap<String, Object>();
 		try {
-
+			customer.setCompanyId(masterService.getObject(Company.class, 1));
 			masterService.saveObject(customer);
 			masterService.saveObject(address);
 			CustomerAddress customerAddress = new CustomerAddress();

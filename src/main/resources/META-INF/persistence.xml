@@ -9,7 +9,6 @@ http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
 		<properties>
 			<property name="hibernate.session_factory_name" value="SESSION_FACTORY" />
 			<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" />
-			<property name="hibernate.hbm2ddl.auto" value="create" />
 			<property name="hibernate.show_sql" value="true" />
 			<property name="hibernate.cache.provider_class" value="org.hibernate.cache.HashtableCacheProvider" />
 		</properties>
