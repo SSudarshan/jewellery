@@ -23,7 +23,7 @@ $(function() {
 												url : 'saveDMethod.html',
 												data : {
 
-													deliveryMehtod : $(
+													description : $(
 															':input[name="deliveryMethod"]',
 															this.el).val(),
 													id : $(
@@ -58,7 +58,7 @@ $(function() {
 													var html = '<tr class="row_'
 															+ data.savedDelivery.id
 															+ '"><td>'
-															+ data.savedDelivery.deliveryMehtod
+															+ data.savedDelivery.description
 															+ '</td><td><span class="btn btn-success editDMethod" data-id="'
 															+ data.savedDelivery.id
 															+ '"><i class="icon-pencil"></i></span></td><td><span class="btn btn-danger deleteDMethod" data-id="'

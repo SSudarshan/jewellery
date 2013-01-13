@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.defysope.dao.DiscountSettingsDao;
-
 import com.defysope.model.Discount;
 
 @Repository

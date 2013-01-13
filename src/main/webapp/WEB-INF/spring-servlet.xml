@@ -36,6 +36,9 @@ http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
 		<property name="prefix" value="" />
 		<property name="suffix" value=".ftl" />
 		<property name="requestContextAttribute" value="rc" />
+		<property name="exposeSpringMacroHelpers" value="true" />
+		<property name="exposeRequestAttributes" value="true" />
+		<property name="exposeSessionAttributes" value="true" />
 	</bean>
 
 
@@ -47,7 +50,7 @@ http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
 		<property name="username" value="postgres" />
 		<property name="password" value="sa" />
 	</bean>
-	
+
 	<bean id="sessionFactory"
 		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
@@ -59,10 +62,10 @@ http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
 		</property>
 		<property name="packagesToScan" value="com.defysope"></property>
 	</bean>
-	
-	 <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">  
-        <property name="dataSource" ref="dataSource" />  
-    </bean>  
+
+	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
 
 	<bean id="emf"
 		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
@@ -72,14 +75,17 @@ http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
 		</property>
 	</bean>
 
-	
+
 
 	<bean id="transactionManager"
 		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
 
-
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="maxUploadSize" value="10000000" />
+	</bean>
 
 	<tx:annotation-driven transaction-manager="transactionManager" />
 

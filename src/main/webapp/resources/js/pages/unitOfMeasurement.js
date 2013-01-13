@@ -23,7 +23,7 @@ $(function() {
 												url : 'saveUOM.html',
 												data : {
 
-													unitOfMeasure : $(
+													description : $(
 															':input[name="unitOfMeasurementName"]',
 															this.el).val(),
 													id : $(
@@ -59,7 +59,7 @@ $(function() {
 													var html = '<tr class="row_'
 															+ data.savedUOMs.id
 															+ '"><td>'
-															+ data.savedUOMs.unitOfMeasure
+															+ data.savedUOMs.description
 															+ '</td><td><span class="btn btn-success editUOM" data-id="'
 															+ data.savedUOMs.id
 															+ '"><i class="icon-pencil"></i></span></td><td><span class="btn btn-danger deleteUOM" data-id="'

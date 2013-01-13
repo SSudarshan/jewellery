@@ -10,7 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class AddSalesOrderController {
 
-	@RequestMapping(value = "/addSalesOrder", method = RequestMethod.GET)
+	@RequestMapping(value = "/inventory/addSalesOrder", method = RequestMethod.GET)
 	public ModelAndView index(@ModelAttribute("model") ModelMap model) {
 
 		return new ModelAndView("addSalesOrder", model);

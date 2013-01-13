@@ -2,9 +2,12 @@ package com.defysope.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -20,6 +23,10 @@ public class Role {
 
 	String description;
 
+	@ManyToOne(targetEntity = Company.class, fetch = FetchType.EAGER)
+	@JoinColumn(name = "companyId")
+	private Company companyId;
+
 	public int getId() {
 		return id;
 	}
@@ -34,6 +41,14 @@ public class Role {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	public Company getCompanyId() {
+		return companyId;
+	}
+
+	public void setCompanyId(Company companyId) {
+		this.companyId = companyId;
 	}
 
 }

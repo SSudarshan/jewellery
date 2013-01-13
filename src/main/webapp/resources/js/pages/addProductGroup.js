@@ -23,7 +23,7 @@ $(function() {
 												url : 'savePG.html',
 												data : {
 
-													groupName : $(
+													description : $(
 															':input[name="groupName"]',
 															this.el).val(),
 													id : $(
@@ -56,7 +56,7 @@ $(function() {
 													var html = '<tr class="row_'
 															+ data.savedPG.id
 															+ '"><td>'
-															+ data.savedPG.groupName
+															+ data.savedPG.description
 															+ '</td><td><span class="btn btn-success editPG" data-id="'
 															+ data.savedPG.id
 															+ '"><i class="icon-pencil"></i></span></td><td><span class="btn btn-danger deletePG" data-id="'

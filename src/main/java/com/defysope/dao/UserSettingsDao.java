@@ -3,6 +3,7 @@ package com.defysope.dao;
 import java.util.List;
 import java.util.Map;
 
+import com.defysope.model.Company;
 import com.defysope.model.Role;
 
 public interface UserSettingsDao {
@@ -12,4 +13,10 @@ public interface UserSettingsDao {
 	Role saveRole(Role role);
 
 	void removeRole(int id);
+
+	List<Map<String, Object>> getUserList(Company companyId);
+
+	List<Map<String, Object>> getPagesList();
+
+	void setAccessRight(int roleId, List<String> items);
 }

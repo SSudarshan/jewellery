@@ -11,12 +11,6 @@
 		<div class="span6">
 			<table class="table">
 				<tr class="control-group">
-					<td class="td-33">Employee</td>
-					<td><input type="text" class="input-large" name="address1" id="address1" /></td>
-					
-				</tr>	
-				
-				<tr class="control-group">
 					<td class="td-33">Supplier Code</td>
 					<td ><select name="state" class="input-large" id="state" ><option value="">Select</option> </select></td>
 				</tr>
@@ -24,14 +18,6 @@
 					<td class="td-33">Supplier Name</td>
 					<td><input type="text" class="input-large" name="regdNumber" id="regdNumber" /></td>
 				</tr>
-				
-				
-				<tr class="control-group">
-					<td class="td-33">Supplier Reference</td>
-					<td><input type="text" class="input-large" name="regdNumber" id="regdNumber" /></td>
-					
-				</tr>
-				
 			</table>
 		</div>
 		<div class="span6">

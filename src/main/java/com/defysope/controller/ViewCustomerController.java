@@ -29,7 +29,7 @@ public class ViewCustomerController {
 	@Autowired
 	private MasterService service;
 
-	@RequestMapping(value = "/viewCustomer", method = RequestMethod.GET)
+	@RequestMapping(value = "/inventory/viewCustomer", method = RequestMethod.GET)
 	public ModelAndView index(@ModelAttribute("model") ModelMap model) {
 
 		model.put("customerType", service.getObjects(CustomerType.class));

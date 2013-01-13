@@ -29,4 +29,10 @@ public class MasterDaoImpl implements MasterDao {
 		sessionFactory.getCurrentSession().saveOrUpdate(obj);
 
 	}
+
+	@SuppressWarnings({ "unchecked", "rawtypes" })
+	public void removeObject(Class clazz, Serializable id) {
+		sessionFactory.getCurrentSession().delete(getObject(clazz, id));
+
+	}
 }

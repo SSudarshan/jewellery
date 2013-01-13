@@ -8,8 +8,6 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.core.sym.Name;
-
 @Entity
 @Table(name="tblDeliveryMethod")
 public class DeliveryMethod {
@@ -20,7 +18,7 @@ public class DeliveryMethod {
 	@Column(name="cid")
 	int id;
 	
-	String deliveryMehtod;
+	String description;
 
 	public int getId() {
 		return id;
@@ -30,14 +28,14 @@ public class DeliveryMethod {
 		this.id = id;
 	}
 
-	public String getDeliveryMehtod() {
-		return deliveryMehtod;
+	public String getDescription() {
+		return description;
 	}
 
-	public void setDeliveryMehtod(String deliveryMehtod) {
-		this.deliveryMehtod = deliveryMehtod;
+	public void setDescription(String description) {
+		this.description = description;
 	}
-	
+
 	
 
 }

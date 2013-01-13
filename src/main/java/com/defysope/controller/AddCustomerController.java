@@ -33,7 +33,7 @@ public class AddCustomerController {
 	@Autowired
 	private MasterService masterService;
 
-	@RequestMapping(value = "/addCustomer", method = RequestMethod.GET)
+	@RequestMapping(value = "/inventory/addCustomer", method = RequestMethod.GET)
 	public ModelAndView index(HttpServletRequest request,
 			@ModelAttribute("model") ModelMap model) {
 		String customerId = request.getParameter("id");
@@ -48,23 +48,7 @@ public class AddCustomerController {
 		return new ModelAndView("addCustomer", model);
 	}
 
-	/*
-	 * @RequestMapping(value = "/saveCustomer") public ModelAndView
-	 * addUser(HttpServletRequest request,
-	 * 
-	 * @ModelAttribute("customer") Customer customer,
-	 * 
-	 * @ModelAttribute("address") Address address,
-	 * 
-	 * @ModelAttribute("delivery") DeliveryAddress daddress) { Map<String,
-	 * Object> model = new HashMap<String, Object>();
-	 * masterService.saveObject(customer); masterService.saveObject(address);
-	 * CustomerAddress customerAddress = new CustomerAddress();
-	 * customerAddress.setCustomerId(customer);
-	 * customerAddress.setContactAddress(address);
-	 * masterService.saveObject(customerAddress); return new
-	 * ModelAndView("addCustomer", model); }
-	 */
+	
 	@RequestMapping(value = "/saveCustomer")
 	public @ResponseBody
 	Object deleteRole(HttpServletRequest request,

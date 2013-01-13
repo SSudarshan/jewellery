@@ -23,7 +23,7 @@ $(function() {
 						type : 'POST'
 
 					}).done(function(data) {
-				
+
 				$(':input[name="roleName"]', this.el).data('id', 0);
 				var tblCls = $('tr.row_' + data.savedRole.id + ' td:eq(0)');
 				if (tblCls.length > 0) {

@@ -30,7 +30,7 @@
     			<#if houseList?exists>
     			<#list houseList as ware>
     			<tr class="row_${ware.id}">
-    				<td>${ware.warehouse}</td>
+    				<td>${ware.description}</td>
     				<td class="center td-5"><span class="btn btn-success editWarehouse" data-id="${ware.id}"><i class="icon-pencil"></i></span></td>
     				<td class="center td-5"><span class="btn btn-danger deleteWarehouse" data-id="${ware.id}"><i class="icon-remove"></i></span></td>
     			</tr>

@@ -9,7 +9,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class AddPaymentController {
-	@RequestMapping(value = "/addPayment", method = RequestMethod.GET)
+	@RequestMapping(value = "/inventory/addPayment", method = RequestMethod.GET)
 	public ModelAndView index(@ModelAttribute("model") ModelMap model) {
 
 		return new ModelAndView("addPayment", model);

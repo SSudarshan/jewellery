@@ -23,7 +23,7 @@ $(function() {
 												url : 'saveWarehouse.html',
 												data : {
 
-													warehouse : $(
+													description : $(
 															':input[name="wareHouseName"]',
 															this.el).val(),
 													id : $(
