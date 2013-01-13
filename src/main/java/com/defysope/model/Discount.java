@@ -17,11 +17,11 @@ public class Discount {
 	@GeneratedValue(strategy = GenerationType.AUTO, generator = "tbldiscount_cid_gen")
 	@SequenceGenerator(name = "tbldiscount_cid_gen", sequenceName = "tbldiscount_cid_seq")
 	@Column(name="cid")
-	private int id;
+	 int id;
 	
-	private String scheme;
+	 String scheme;
 	
-	private int discountpercent;
+	 int discountpercent;
 	public int getId() {
 		return id;
 	}
