@@ -18,15 +18,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.defysope.core.BusinessObjectEditor2;
-import com.defysope.dummy.DeliveryAddress;
-import com.defysope.model.Address;
 import com.defysope.model.Company;
 import com.defysope.model.Country;
-import com.defysope.model.Customer;
-import com.defysope.model.CustomerAddress;
-import com.defysope.model.CustomerType;
 import com.defysope.model.State;
-import com.defysope.service.CompanySettingsManager;
 import com.defysope.service.impl.MasterService;
 
 

@@ -9,7 +9,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class ChequeClearenceController {
-	@RequestMapping(value = "/addChequeClearance", method = RequestMethod.GET)
+	@RequestMapping(value = "/inventory/addChequeClearance", method = RequestMethod.GET)
 	public ModelAndView index(@ModelAttribute("model") ModelMap model) {
 
 		return new ModelAndView("addChequeClearance", model);

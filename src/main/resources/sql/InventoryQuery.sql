@@ -1,10 +1,31 @@
+CREATE TABLE tbluser
+(
+  cid serial NOT NULL,
+  uerName character varying(200),
+  password character varying(200),
+  email character varying(200),
+  firstname character varying(200),
+  lastname character varying(200),
+  role integer,
+  companyId integer,
+  CONSTRAINT pk_tbluser PRIMARY KEY (cid ),
+  CONSTRAINT tbluser_company_fkey FOREIGN KEY (companyId)
+      REFERENCES tblcompany (cid) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION,
+  CONSTRAINT tbluser_role_fkey FOREIGN KEY (role)
+      REFERENCES tblrole (cid) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
+)
 
 CREATE TABLE tblrole
 (
-  cid serial not null,
-  description character varying(255),
-  constraint tblrole_pkey primary key (cid)
-  
+  cid serial NOT NULL,
+  description character varying(200),
+  companyid integer,
+  CONSTRAINT pk_tblrole PRIMARY KEY (cid ),
+  CONSTRAINT tbluser_company_fkey FOREIGN KEY (companyid)
+      REFERENCES tblcompany (cid) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
 )
 
 CREATE TABLE tblboardrate
@@ -33,7 +54,11 @@ CREATE TABLE tblbrand
 (
   cid serial not null,
   description character varying(255),
-  CONSTRAINT tblbrand_pkey PRIMARY KEY (cid )
+  companyid integer,
+  CONSTRAINT tblbrand_pkey PRIMARY KEY (cid ),
+   CONSTRAINT tblbrand_company_fkey FOREIGN KEY (companyid)
+      REFERENCES tblcompany (cid) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
 )
 
 CREATE TABLE tbldiscount
@@ -70,7 +95,11 @@ CREATE TABLE tblwarehouse
 (
   cid serial not null,
   description character varying(255),
-  CONSTRAINT tblwarehouse_pkey PRIMARY KEY (cid  )
+  companyid integer,
+  CONSTRAINT tblwarehouse_pkey PRIMARY KEY (cid  ),
+  CONSTRAINT tblwarehouse_company_fkey FOREIGN KEY (companyid)
+      REFERENCES tblcompany (cid) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
 )
 
 
@@ -303,4 +332,86 @@ comments character varying(1000),
 constraint tblpayment_pk_cid primary key (cid)
 )
 
+create table tblmodule(
+ cid serial primary key,
+ description varchar,
+ helptext varchar
+)
 
+
+insert into tblmodule(description) values('Purchase');
+insert into tblmodule(description) values('Sales');
+insert into tblmodule(description) values('Inventory');
+insert into tblmodule(description) values('Settings');
+
+
+create table tblpageurls(
+   cid serial primary key,
+   url varchar,
+   description varchar,
+   helptext varchar,
+   module integer,
+   constraint fk_module foreign key (module) references tblmodule(cid)
+)
+
+insert into tblpageurls(url,description,module) values('/inventory/addProductEnquiry.html','Product Enquiry',2);
+insert into tblpageurls(url,description,module) values('/inventory/addCustomer.html','New Customer',2);
+insert into tblpageurls(url,description,module) values('/inventory/viewCustomer.html','View Customer',2);
+insert into tblpageurls(url,description,module) values('/inventory/addSalesOrder.html','New Sales Order',2);
+insert into tblpageurls(url,description,module) values('/inventory/addPayment.html','Add Payment',2);
+insert into tblpageurls(url,description,module) values('/inventory/addChequeClearance.html','Cheque Clearance',2);
+
+
+create table tblaccessrights(
+  cid serial primary key,
+  role integer,
+  pages integer,
+  constraint fk_role foreign key (role) references tblrole(cid),
+  constraint fk_pages foreign key (pages) references tblpageurls(cid)
+)
+
+create table tblSupplierVendor(
+ cid serial primary key,
+ companyId integer,
+ supplierCode varchar,
+ suplierName varchar,
+ supplierType varchar,
+ specialization varchar,
+ regNo varchar,
+ cstVatNumber varchar,
+ notes varchar,
+ UNIQUE (companyId,supplierCode),
+ CONSTRAINT tblSupplierVendor_companyId_fkey FOREIGN KEY (companyId)
+      REFERENCES tblcompany (cid) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
+ 
+)
+
+create table tblproduct(
+	cid serial primary key,
+	productgroup integer,
+	code varchar,
+	description varchar,
+	barcode varchar,
+	modelno varchar,
+	brand integer,
+	uom integer,
+	weight numeric(18,4),
+	avglandcost numeric(18,4),
+	lastcost numeric(18,4),
+	purchaseprice numeric(18,4),
+	sellprice numeric(18,4),
+	filename varchar,
+	attachment bytea,
+	notes varchar,
+	CONSTRAINT tblproduct_uom_fk FOREIGN KEY (uom)
+	REFERENCES tbluom (cid) MATCH SIMPLE
+	ON UPDATE NO ACTION ON DELETE NO ACTION,
+	CONSTRAINT tblproduct_productgroup_fk FOREIGN KEY (productgroup)
+	REFERENCES tblproductgroup (cid) MATCH SIMPLE
+	ON UPDATE NO ACTION ON DELETE NO ACTION,
+CONSTRAINT tblproduct_brand_fk FOREIGN KEY (brand)
+	REFERENCES tblbrand (cid) MATCH SIMPLE
+	ON UPDATE NO ACTION ON DELETE NO ACTION
+
+)

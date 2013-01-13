@@ -1,7 +1,6 @@
 body {
 	adding-bottom: 40px;
 	background: #f06;
-	background: linear-gradient(90deg, #0F1011, #3C3E43);
 	min-height: 100%;
 }
 
@@ -24,7 +23,7 @@ body {
 }
 
 .navbar-inner {
-	background: url("../images/nav-img.png") repeat-x !important;
+	
 }
 
 .navbar .brand {

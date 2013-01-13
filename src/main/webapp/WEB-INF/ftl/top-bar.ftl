@@ -14,11 +14,11 @@
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">Purchase <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                           <li class="nav-header">Transactions</li>
-                          <li><a href="${rc.getContextPath()}/addPurchase.html">Add Purchase</a></li>
+                          <li><a href="${rc.getContextPath()}/inventory/addPurchase.html">Add Purchase</a></li>
                           <li><a href="#">View Purchase</a></li>
                           <li class="divider"></li>
                           <li class="nav-header">Suppliers</li>
-                          <li><a href="${rc.getContextPath()}/addSupplier.html">Add Suppliers</a></li>
+                          <li><a href="${rc.getContextPath()}/inventory/addSupplier.html">Add Suppliers</a></li>
                           <li><a href="#">View Suppliers</a></li>
                           <li class="divider"></li>
                           <li class="nav-header">Report</li>
@@ -29,27 +29,17 @@
                       <li class="dropdown">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">Sales <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                          <li class="nav-header">Customers</li>
-                           <li><a href="${rc.getContextPath()}/addProductEnquiry.html">Product Enquiry</a></li>
-                          <li><a href="${rc.getContextPath()}/addCustomer.html">New Customer</a></li>
-                          <li><a href="${rc.getContextPath()}/viewCustomer.html">View Customers</a></li>
-                           <li><a href="${rc.getContextPath()}/addSalesOrder.html">New Sales Order</a></li>
-                          <li><a href="#">View Sales Order</a></li>
-                          <li class="divider"></li>
-                          <li class="nav-header">Invoice</li>
-                          <li><a href="${rc.getContextPath()}/addPayment.html">Add Payment</a></li>
-                          <li><a href="${rc.getContextPath()}/addChequeClearance.html">Cheque Clearance</a></li>
-                          <li class="divider"></li>
-                          <li class="nav-header">Report</li>
-                          <li><a href="#">Sales Report</a></li>
+                        	<#list pagePermissions as page>
+                          		<li><a href="${rc.getContextPath()}${page.url}">${page.description}</a></li>
+                          	</#list>
                          </ul>
                       </li>
                       
                       <li class="dropdown">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">Inventory <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                          <li><a href="${rc.getContextPath()}/addProduct.html">Add Product</a></li>
-                          <li><a href="#">View Products</a></li>
+                          <li><a href="${rc.getContextPath()}/inventory/addProduct.html">Add Product</a></li>
+                          <li><a href="${rc.getContextPath()}/inventory/viewProduct.html">View Products</a></li>
                           <li class="divider"></li>
                           <li><a href="#">View Stock on hand</a></li>
                           <li><a href="#">View Out of stock</a></li>
@@ -60,9 +50,9 @@
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">Settings <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                           <li class="nav-header">Security</li>
-                          <li><a href="#">Add Users</a></li>
+                          <li><a href="${rc.getContextPath()}/inventory/adduser.html">Add Users</a></li>
                           <li><a href="${rc.getContextPath()}/addRole.html">Add Roles</a></li>
-                          <li><a href="#">Set Page Access</a></li>
+                          <li><a href="${rc.getContextPath()}/inventory/accessRights.html">Set Page Access</a></li>
                           <li class="divider"></li>
                           <li class="nav-header">Settings</li>
                           <li><a href="${rc.getContextPath()}/addUOM.html">UOM</a></li>
@@ -80,7 +70,16 @@
                            <li><a href="${rc.getContextPath()}/addDiscount.html">Discount Setting</a></li>
                           </ul>
                       </li>
-                      
+                    </ul>
+                    <ul class="nav pull-right">
+                      <li class="dropdown open">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">Welcome <#if user?exists>${user.getUerName()}<#else>2</#if> <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                          <li><a href="#">Edit Profile</a></li>
+                          <li><a href="#">Setting</a></li>
+                          <li><a href="#">Log Out</a></li>
+                        </ul>
+                      </li>
                     </ul>
                  </div> 
          </div>

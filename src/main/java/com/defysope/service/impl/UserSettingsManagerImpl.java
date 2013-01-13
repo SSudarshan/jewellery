@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.defysope.dao.UserSettingsDao;
+import com.defysope.model.Company;
 import com.defysope.model.Role;
 import com.defysope.service.UserSettingsManager;
 
@@ -28,6 +29,20 @@ public class UserSettingsManagerImpl implements UserSettingsManager {
 
 	public void removeRole(int id) {
 		userSettingsDao.removeRole(id);
+		
+	}
+
+	public List<Map<String, Object>> getUserList(Company companyId) {
+		return userSettingsDao.getUserList(companyId);
+	}
+
+	public List<Map<String, Object>> getPagesList() {
+		
+		return userSettingsDao.getPagesList();
+	}
+
+	public void setAccessRight(int roleId, List<String> items) {
+		userSettingsDao.setAccessRight(roleId, items);
 		
 	}
 

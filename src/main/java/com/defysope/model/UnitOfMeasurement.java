@@ -19,22 +19,18 @@ public class UnitOfMeasurement {
 	@Column(name="cid")
 	int id;
 	
-	String unitOfMeasure;
+	String description;
 	public int getId() {
 		return id;
 	}
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getUnitOfMeasure() {
-		return unitOfMeasure;
+	public String getDescription() {
+		return description;
 	}
-	public void setUnitOfMeasure(String unitOfMeasure) {
-		this.unitOfMeasure = unitOfMeasure;
+	public void setDescription(String description) {
+		this.description = description;
 	}
-	
-	
-	
-	
 
 }

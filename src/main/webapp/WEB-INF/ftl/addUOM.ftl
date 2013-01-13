@@ -29,7 +29,7 @@
     			<#if uomList?exists>
     			<#list uomList as uom>
     			<tr class="row_${uom.id}">
-    				<td>${uom.unitOfMeasure}</td>
+    				<td>${uom.description}</td>
     				
     				<td class="center td-5"><span class="btn btn-success editUOM" data-id="${uom.id}"><i class="icon-pencil"></i></span></td>
     				<td class="center td-5"><span class="btn btn-danger deleteUOM" data-id="${uom.id}"><i class="icon-remove"></i></span></td>

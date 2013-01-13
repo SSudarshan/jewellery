@@ -12,8 +12,8 @@ import com.defysope.dao.MasterDao;
 
 @Service
 @Transactional(readOnly = true, propagation = Propagation.REQUIRED)
-public class MasterServiceImpl implements MasterService{
-	
+public class MasterServiceImpl implements MasterService {
+
 	@Autowired
 	private MasterDao masterDao;
 
@@ -22,13 +22,20 @@ public class MasterServiceImpl implements MasterService{
 	}
 
 	public <T> T getObject(Class<T> clazz, Serializable id) {
-		return masterDao.getObject(clazz,id);
+		return masterDao.getObject(clazz, id);
 	}
 
 	@Transactional(readOnly = false, propagation = Propagation.REQUIRED)
 	public void saveObject(Object obj) {
 		masterDao.saveObject(obj);
-		
+
+	}
+
+	@SuppressWarnings("rawtypes")
+	@Transactional(readOnly = false, propagation = Propagation.REQUIRED)
+	public void removeObject(Class clazz, Serializable id) {
+		masterDao.removeObject(clazz, id);
+
 	}
 
 }

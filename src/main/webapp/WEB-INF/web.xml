@@ -8,7 +8,7 @@
     	
   <display-name>Freemarker_SpringMVC_example</display-name>
   <welcome-file-list>
-    <welcome-file>welcome.jsp</welcome-file>
+    <welcome-file>welcome.ftl</welcome-file>
   </welcome-file-list>
 
   <servlet>

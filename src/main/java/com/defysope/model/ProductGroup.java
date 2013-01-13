@@ -17,19 +17,20 @@ public class ProductGroup {
 	@SequenceGenerator(name = "tblproductgroup_cid_gen", sequenceName = "tblproductgroup_cid_seq")
 	@Column(name="cid")
 	int id;
-	String groupName;
+	String description;
 	public int getId() {
 		return id;
 	}
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getGroupName() {
-		return groupName;
+	public String getDescription() {
+		return description;
 	}
-	public void setGroupName(String groupName) {
-		this.groupName = groupName;
+	public void setDescription(String description) {
+		this.description = description;
 	}
+	
 	
 	
 	

@@ -31,7 +31,7 @@
     			<#if groupList?exists>
     			<#list groupList as group>
     			<tr class="row_${group.id}">
-    				<td>${group.groupName}</td>
+    				<td>${group.description}</td>
     				<td class="center td-5"><span class="btn btn-success editPG" data-id="${group.id}"><i class="icon-pencil"></i></span></td>
     				<td class="center td-5"><span class="btn btn-danger deletePG" data-id="${group.id}"><i class="icon-remove"></i></span></td>
     			</tr>
