@@ -1,6 +1,7 @@
 body {
 	adding-bottom: 40px;
 	background: #f06;
+	background-image: url("../images/canvas.jpg");
 	min-height: 100%;
 }
 
@@ -23,12 +24,22 @@ body {
 }
 
 .navbar-inner {
-	
+	background: linear-gradient(to bottom, #A90329 0%, #8F0222 44%, #6D0019 100%)
+		repeat scroll 0 0 transparent;
 }
 
 .navbar .brand {
 	color: #E98007;
 	padding-left: 30px;
+}
+
+.financial-month {
+	background-color: #CDFFFF;
+	background-image: linear-gradient(to bottom, #FFFFFF 0%, #CDFFFF 100%);
+	border: 1px solid #0D7EC6;
+	border-radius: 6px 6px 6px 6px;
+	box-shadow: 0 -2px 0 rgba(58, 78, 103, 0.08) inset, 0 2px 0
+		rgba(190, 210, 230, 0.5);
 }
 
 .masthead {
@@ -156,4 +167,13 @@ td.center,th.center {
 	border-bottom: 1px solid slategrey;
 	color: #E2B901;
 	text-align: center;
+}
+
+.month_name {
+	float: left;
+	margin: 30px -15px 1px 10px;
+	text-align: center;
+	width: 180px;
+	font-size: 120%;
+	margin-left: 10px
 }

@@ -32,6 +32,7 @@ public class FinancialMonth {
 	private Date createdDate;
 	private Date modifiedDate;
 	private Boolean isReleased;
+	private Integer year;
 
 	public int getId() {
 		return id;
@@ -96,5 +97,15 @@ public class FinancialMonth {
 	public void setIsReleased(Boolean isReleased) {
 		this.isReleased = isReleased;
 	}
+
+	public Integer getYear() {
+		return year;
+	}
+
+	public void setYear(Integer year) {
+		this.year = year;
+	}
+
+	
 
 }

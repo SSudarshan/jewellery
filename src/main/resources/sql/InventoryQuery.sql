@@ -64,9 +64,17 @@ CREATE TABLE tblbrand
 CREATE TABLE tbldiscount
 (
  cid serial not null,
+ productgroup integer,
+ product integer,
  scheme character varying(255), 
  discountpercent integer,
-  CONSTRAINT tbldiscount_pkey PRIMARY KEY (cid )
+  CONSTRAINT tbldiscount_pkey PRIMARY KEY (cid ),
+   CONSTRAINT tbldiscount_productgroup_fkey FOREIGN KEY (productgroup)
+      REFERENCES tblproductgroup (cid) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION,
+       CONSTRAINT tbldiscount_product_fkey FOREIGN KEY (product)
+      REFERENCES tblproduct (cid) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
 )
 CREATE TABLE tbltax
 (

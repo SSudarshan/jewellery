@@ -55,6 +55,7 @@
                           <li><a href="${rc.getContextPath()}/inventory/accessRights.html">Set Page Access</a></li>
                           <li class="divider"></li>
                           <li class="nav-header">Settings</li>
+                          <li><a href="${rc.getContextPath()}/inventory/financialMonth.html">Financial Month</a></li>
                           <li><a href="${rc.getContextPath()}/addUOM.html">UOM</a></li>
                           <li><a href="${rc.getContextPath()}/addCompany.html">Company</a></li>
                           <li><a href="${rc.getContextPath()}/addProductGroup.html">Product Group</a></li>
@@ -67,7 +68,7 @@
                         
                            <li><a href="${rc.getContextPath()}/addBrand.html">Brand</a></li>
                           <li><a href="${rc.getContextPath()}/addCustomerType.html">Customer Type</a></li>
-                           <li><a href="${rc.getContextPath()}/addDiscount.html">Discount Setting</a></li>
+                           <li><a href="${rc.getContextPath()}/inventory/addDiscount.html">Discount Setting</a></li>
                           </ul>
                       </li>
                     </ul>

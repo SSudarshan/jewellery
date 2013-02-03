@@ -18,45 +18,27 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.defysope.core.BusinessObjectEditor2;
+import com.defysope.core.DefysopeUtils;
 import com.defysope.model.Company;
 import com.defysope.model.Country;
 import com.defysope.model.State;
 import com.defysope.service.impl.MasterService;
 
-
-
 @Controller
 public class CompanyController {
-	
-//	@Autowired
-//	private CompanySettingsManager companySettingsManager;
-	
+
 	@Autowired
 	private MasterService masterService;
-	
+
 	@RequestMapping(value = "/addCompany", method = RequestMethod.GET)
-	public ModelAndView index(@ModelAttribute("model") ModelMap model) {
+	public ModelAndView index(HttpServletRequest request,
+			@ModelAttribute("model") ModelMap model) {
 		model.put("states", masterService.getObjects(State.class));
 		model.put("countryList", masterService.getObjects(Country.class));
+		model.put("company", DefysopeUtils.getCompany(request));
 		return new ModelAndView("addCompany", model);
 	}
-	
-	/*@RequestMapping(value = "/saveCompany")
-	public ModelAndView addUser(HttpServletRequest request,
-			@ModelAttribute("company") Company company
-			) {
-		Map<String, Object> model = new HashMap<String, Object>();
-		if(company.getId()<=1)
-		{
-		masterService.saveObject(company);
-		}
-		else
-		{
-			System.out.println("You Can make only one entry");
-		}
-		return new ModelAndView("addCompany", model);
-	}
-*/
+
 	@SuppressWarnings("rawtypes")
 	@RequestMapping(value = "/saveCompany")
 	public @ResponseBody
@@ -65,16 +47,14 @@ public class CompanyController {
 		Map<String, Object> model = new HashMap<String, Object>();
 		try {
 
-			List list=masterService.getObjects(Company.class);
-			
-			if(list.isEmpty()==true)
-			{
+			List list = masterService.getObjects(Company.class);
+
+			if (list.isEmpty() == true) {
 				masterService.saveObject(company);
 				model.put("success", true);
 			}
-			//model.put("success", true);
-			else
-			{
+			// model.put("success", true);
+			else {
 				model.put("success", false);
 			}
 		} catch (Exception e) {

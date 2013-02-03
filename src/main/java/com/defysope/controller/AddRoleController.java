@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.defysope.core.DefysopeUtils;
 import com.defysope.model.Role;
 import com.defysope.model.User;
 import com.defysope.service.UserSettingsManager;
@@ -35,7 +36,7 @@ public class AddRoleController {
 	@RequestMapping(value = "/saveRole", method = RequestMethod.POST)
 	public @ResponseBody
 	Object addUser(HttpServletRequest request, @ModelAttribute("role") Role role) {
-		User user = (User) request.getSession().getAttribute("user");
+		User user = DefysopeUtils.getUser(request);
 		role.setCompanyId(user.getCompanyId());
 		Role savedRole = userSettingsManager.saveRole(role);
 		Map<String, Object> model = new HashMap<String, Object>();

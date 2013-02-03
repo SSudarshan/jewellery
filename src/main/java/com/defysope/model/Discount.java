@@ -2,9 +2,12 @@ package com.defysope.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -18,15 +21,32 @@ public class Discount {
 	@SequenceGenerator(name = "tbldiscount_cid_gen", sequenceName = "tbldiscount_cid_seq")
 	@Column(name="cid")
 	private int id;
-	
+	@ManyToOne(targetEntity = ProductGroup.class, fetch = FetchType.EAGER)
+	@JoinColumn(name = "productgroup")
+	private ProductGroup productGroup;
+	@ManyToOne(targetEntity = Product.class, fetch = FetchType.EAGER)
+	@JoinColumn(name = "product")
+	private Product product;
 	private String scheme;
-	
-	private int discountpercent;
+	private int discount;
 	public int getId() {
 		return id;
 	}
 	public void setId(int id) {
 		this.id = id;
+	}
+	
+	public ProductGroup getProductGroup() {
+		return productGroup;
+	}
+	public void setProductGroup(ProductGroup productGroup) {
+		this.productGroup = productGroup;
+	}
+	public Product getProduct() {
+		return product;
+	}
+	public void setProduct(Product product) {
+		this.product = product;
 	}
 	public String getScheme() {
 		return scheme;
@@ -34,12 +54,16 @@ public class Discount {
 	public void setScheme(String scheme) {
 		this.scheme = scheme;
 	}
-	public int getDiscountpercent() {
-		return discountpercent;
+	public int getDiscount() {
+		return discount;
 	}
-	public void setDiscountpercent(int discountpercent) {
-		this.discountpercent = discountpercent;
+	public void setDiscount(int discount) {
+		this.discount = discount;
 	}
+	
+	
+	
+	
 	
 	
 
