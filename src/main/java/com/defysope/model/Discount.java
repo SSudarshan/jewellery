@@ -20,6 +20,7 @@ public class Discount {
 	@GeneratedValue(strategy = GenerationType.AUTO, generator = "tbldiscount_cid_gen")
 	@SequenceGenerator(name = "tbldiscount_cid_gen", sequenceName = "tbldiscount_cid_seq")
 	@Column(name="cid")
+
 	private int id;
 	@ManyToOne(targetEntity = ProductGroup.class, fetch = FetchType.EAGER)
 	@JoinColumn(name = "productgroup")
@@ -29,6 +30,13 @@ public class Discount {
 	private Product product;
 	private String scheme;
 	private int discount;
+
+	 int id;
+	
+	 String scheme;
+	
+	 int discountpercent;
+
 	public int getId() {
 		return id;
 	}

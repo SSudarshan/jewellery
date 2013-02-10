@@ -26,36 +26,7 @@ import freemarker.template.TemplateException;
 public class ControllerUtils {
 	private static Log log = LogFactory.getLog(ControllerUtils.class);
 
-	public static String getProcessedHtml(
-			ApplicationContext applicationContext, File file,
-			Map<Object, Object> params) throws IOException, TemplateException {
-		FreeMarkerConfigurer freemarkerConfig = (FreeMarkerConfigurer) applicationContext
-				.getBean("freemarkerConfig");
-		FileReader reader = new FileReader(file);
-		StringWriter writer = new StringWriter();
-		Template temp = new Template("", reader,
-				freemarkerConfig.getConfiguration());
-		temp.process(params, writer);
-		String fragment = writer.toString();
-		return fragment;
-	}
-
-	public static String getProcessedHtml(ApplicationContext conext,
-			String template, Map params) throws IOException, TemplateException {
-		FreeMarkerConfigurer freemarkerConfig = (FreeMarkerConfigurer) conext
-				.getBean("freemarkerConfig");
-		StringReader reader = new StringReader(template);
-		BufferedReader bufferedReader = new BufferedReader(reader);
-		StringWriter writer = new StringWriter();
-
-		Template temp = new Template("", bufferedReader,
-				freemarkerConfig.getConfiguration());
-		temp.process(params, writer);
-		String fragment = writer.toString();
-
-		return fragment;
-	}
-
+	
 	public static void openFile(String path, HttpServletResponse res,
 			String fileName) throws FileNotFoundException, IOException {
 		path = path + "/" + fileName;
