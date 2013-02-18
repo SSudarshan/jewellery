@@ -73,9 +73,18 @@ public class ProductGroupSettingsDaoImpl implements ProductGroupSettingsDao {
 	}
 
 	public List<Map<String, Object>> getProductList() {
-		String sql = "select product.cid as id ,product.code,product.description,product.sellprice,product.filename,uom.description as uom,"
+		String sql = "select product.cid as id ,product.product_code,product.description,product.sellprice,product.filename,uom.description as uom,"
 				+ "brand.description as brand,grp.description as grp from tblproduct product,tblbrand brand,tbluom uom,"
 				+ "tblproductgroup grp where product.uom=uom.cid and product.brand=brand.cid and product.productgroup=grp.cid";
+		return jdbcTemplate.queryForList(sql);
+	}
+
+	public List<Map<String, Object>> getProducts(int productGroup) {
+		String sql = "select product.cid as id ,product.description from tblproduct product,"
+				+ "tblproductgroup grp where product.productgroup=grp.cid";
+		if (productGroup > 0) {
+			sql = sql + " and product.productgroup=" + productGroup;
+		}
 		return jdbcTemplate.queryForList(sql);
 	}
 

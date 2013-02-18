@@ -242,22 +242,30 @@ create table tblSupplierAddress(
 )
 
 create table tblpurchase(
-cid serial not null,
-empid integer references tbluser(cid),
-productid integer references tblproduct(cid),
-supplierid integer references tblVendorSupplier(cid),
-monthId integer references tblfinancialmonth (cid),
-companyId integer references tblcompany (cid),
- refference varchar(100),
-warehouseid integer references tblwarehouse(cid),
-orderdate date,
-deliverydate date,
-quantity int,
-price numeric(18,4),
-comments varchar(1000),
-constraint tblPurchase_pk_cid primary key (cid)
-
+	cid serial not null,
+	supplierid integer references tblSupplierVendor(cid),
+	warehouseid integer references tblwarehouse(cid),
+	orderdate date,
+	deliverydate date,
+	empid integer references tbluser(cid),
+	companyId integer references tblcompany (cid),
+	refference varchar(100),
+	modifieddate date,
+	status varchar(400),
+	constraint tblPurchase_pk_cid primary key (cid)
 )
+
+create table tblpurchaseItems(
+	cid serial not null,
+	purchaseid integer references tblpurchase(cid),
+	productid integer references tblproduct(cid),
+	quantity int,
+	price numeric(18,4),
+	comments varchar(1000),
+	status varchar(300),
+	constraint tblPurchaseItems_pk_cid primary key (cid)
+)
+
 
 create table tblproduct(
 cid serial not null,

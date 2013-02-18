@@ -12,16 +12,15 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="tbldiscount")
+@Table(name = "tbldiscount")
 public class Discount {
-	
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO, generator = "tbldiscount_cid_gen")
 	@SequenceGenerator(name = "tbldiscount_cid_gen", sequenceName = "tbldiscount_cid_seq")
-	@Column(name="cid")
-
+	@Column(name = "cid")
 	private int id;
+
 	@ManyToOne(targetEntity = ProductGroup.class, fetch = FetchType.EAGER)
 	@JoinColumn(name = "productgroup")
 	private ProductGroup productGroup;
@@ -31,48 +30,46 @@ public class Discount {
 	private String scheme;
 	private int discount;
 
-	 int id;
-	
-	 String scheme;
-	
-	 int discountpercent;
+	int discountpercent;
 
 	public int getId() {
 		return id;
 	}
+
 	public void setId(int id) {
 		this.id = id;
 	}
-	
+
 	public ProductGroup getProductGroup() {
 		return productGroup;
 	}
+
 	public void setProductGroup(ProductGroup productGroup) {
 		this.productGroup = productGroup;
 	}
+
 	public Product getProduct() {
 		return product;
 	}
+
 	public void setProduct(Product product) {
 		this.product = product;
 	}
+
 	public String getScheme() {
 		return scheme;
 	}
+
 	public void setScheme(String scheme) {
 		this.scheme = scheme;
 	}
+
 	public int getDiscount() {
 		return discount;
 	}
+
 	public void setDiscount(int discount) {
 		this.discount = discount;
 	}
-	
-	
-	
-	
-	
-	
 
 }
