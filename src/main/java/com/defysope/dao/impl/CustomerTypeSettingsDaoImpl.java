@@ -52,6 +52,14 @@ public class CustomerTypeSettingsDaoImpl implements CustomerTypeSettingsDao {
 		return jdbcTemplate.queryForList(sql);
 	}
 
+	public List<Map<String, Object>> getPurchaseDatas() {
+		String sql = " select pse.cid as id,sup.supliername as supplier, war.description,"
+				+ "pse.orderdate,pse.deliverydate,pse.status from tblpurchase pse "
+				+ "inner join tblsuppliervendor sup on pse.supplierid=sup.cid "
+				+ "inner join tblwarehouse war on pse.warehouseid= war.cid";
+		return jdbcTemplate.queryForList(sql);
+	}
+
 	public void setDataSource(DataSource ds) {
 		// TODO Auto-generated method stub
 

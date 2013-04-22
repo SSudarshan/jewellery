@@ -65,7 +65,7 @@
 					<td><select name="uom" class="input-medium" id="uom" >
 								<option value="0">------Select-------</option> 
 								<#list uomList as  uom>
-									<option value="${uom.id}">${uom.description}</option>
+									<option value="${uom.id}">${uom.description!''}</option>
 								</#list>
 								
 							</select></td>

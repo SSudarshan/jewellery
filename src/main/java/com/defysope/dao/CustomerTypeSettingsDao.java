@@ -20,5 +20,7 @@ public interface CustomerTypeSettingsDao {
 	List<Map<String, Object>> getGridData(int customerType);
 
 	void deleleCustomer(int id);
+	
+	public List<Map<String, Object>> getPurchaseDatas();
 
 }

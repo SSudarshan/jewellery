@@ -43,5 +43,9 @@ public class CustomerTypeSettingsManagerImpl implements CustomerTypeSettingsMana
 	customerTypeSettingsDao.deleleCustomer(id);
 		
 	}
+	
+	public List<Map<String, Object>> getPurchaseDatas(){
+		return customerTypeSettingsDao.getPurchaseDatas();
+	}
 
 }

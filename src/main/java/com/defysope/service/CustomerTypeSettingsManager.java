@@ -17,5 +17,5 @@ public interface CustomerTypeSettingsManager {
 
 	void deleleCustomer(int id);
 
-
+	List<Map<String, Object>> getPurchaseDatas();
 }
